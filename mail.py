@@ -17,7 +17,7 @@ def send_email(sender, password, recipient, subject, body):
 send_email(
     sender="manojbarbatos@gmail.com",
     password="tnlm yxfx vlrh ltlk", 
-    recipient="manojmassradan@example.com",
-    subject="Hello",
-    body="I am "
+    recipient="manojmassradan@gmail.com",
+    subject="testing",
+    body="kekutha da venna "
 )
