@@ -96,7 +96,7 @@ def send_email(sender, password, recipient, subject, body):
 def Pdf_to_CV_extract(user_input):
     temp ="""###system
 You are a helpful assistant. your task is find the information from the text which the text is extracted from the resume.
-Return the output in JSON format to parse the details.
+
 
 The details you have to collect from the text:
 
@@ -109,12 +109,10 @@ The details you have to collect from the text:
 7.OBJECTIVE,
 8.ACHIEVEMENTS
 
-
+Return the output strictly in **valid JSON** format with clear keys and properly formatted lists.
 
 ### TEXT: 
 {input} 
-
-
 
 ### Assistant:"""
 
@@ -127,6 +125,103 @@ The details you have to collect from the text:
     input_prompts = temp.format(input=user_input)
     intent_anse = hit_vllm_model(input_prompts, sampling_params=sampling_params)
     return intent_anse.replace(input_prompts, "")
+
+
+def create_jd(user_input):
+    temp = """### System
+You are a professional HR assistant and expert job description (JD) writer. 
+Your task is to analyze the provided text and create a *complete and structured job description* (JD) in JSON format.
+
+The JD should be clear, concise, and ready for direct use in a job posting or HR database.
+
+### Instructions:
+From the given text, extract and logically infer the following key details (if missing, make reasonable assumptions based on context):
+
+1. JOB_TITLE – The title of the position.
+2. DEPARTMENT – The team or department the role belongs to.
+3. LOCATION – Work location or type (Remote/Hybrid/On-site).
+4. JOB_TYPE – Full-time, Part-time, Contract, Internship, etc.
+5. EXPERIENCE_REQUIRED – Range or level of experience needed.
+6. EDUCATION – Minimum educational qualification.
+7. SKILLS_REQUIRED – Technical and soft skills required.
+8. JOB_SUMMARY – A short overview (3–4 lines) describing the purpose of the role.
+9. ROLES_AND_RESPONSIBILITIES – A list of 6–10 key responsibilities.
+10. QUALIFICATIONS – Key must-have criteria.
+11. SALARY_RANGE – If mentioned or inferable.
+12. COMPANY_NAME – If provided in the text.
+13. BENEFITS – Perks, benefits, or advantages of the role.
+14. EMPLOYMENT_MODE – Onsite / Remote / Hybrid.
+15. APPLICATION_DEADLINE – If mentioned.
+16. CONTACT_INFORMATION – Email, phone, or link to apply.
+
+Return the output strictly in **valid JSON** format with clear keys and properly formatted lists.
+
+### TEXT:
+{input}
+
+### Assistant:"""
+
+    sampling_params = {
+        "temperature": 0.7,
+        "top_p": 0.3,
+        "max_tokens": 4096,
+    }
+
+    input_prompts = temp.format(input=user_input)
+    intent_anse = hit_vllm_model(input_prompts, sampling_params=sampling_params)
+    return intent_anse.replace(input_prompts, "")
+
+
+def Pdf_to_jd_extract(pdf_text):
+    temp ="""###system
+You are a helpful assistant. your task is find the information from the text which the textis extracted from the jobdescription.
+
+Return the output strictly in **valid JSON** format with clear keys and properly formatted lists.
+
+### TEXT: 
+{input} 
+
+### Assistant:"""
+
+    sampling_params = {
+    "temperature" : 0.7,
+    "top_p" : 0.3,
+    "max_tokens" : 4096,
+
+    }
+
+    input_prompts = temp.format(input=pdf_text)
+    intent_anse = hit_vllm_model(input_prompts,sampling_params=sampling_params)
+    return intent_anse.replace(input_prompts,"")
+
+def matching_jd_cv(CV,JD):
+    user_input = f"""  
+    ### Curriculum Vitae:
+    {CV}
+    
+    ### job description:
+    {JD}
+
+    """
+    temp ="""###system
+You are a helpful assistant. Your task is to create a perfect CV by analyzing the given job description (JD). Tailor the resume to best fit the requirements and qualifications outlined in the job description.
+
+### TEXT: 
+{input} 
+
+### Assistant:"""
+
+    sampling_params = {
+        "temperature" : 0.7, 
+        "top_p" : 0.3,
+        "max_tokens" : 4096,
+    }
+
+    input_prompts = temp.format(input=user_input)
+    intent_anse = hit_vllm_model(input_prompts, sampling_params=sampling_params)
+    return intent_anse.replace(input_prompts, "")
+
+
 
 def analys_CV(experience, skills, education):
     user_input = f"""
@@ -142,7 +237,7 @@ def analys_CV(experience, skills, education):
     """
     temp ="""###system
     As a helpful CV creator assistant, your task is to make the best CV based on the provided details and rephrase them.
-    - give it in human readable format like topic then content in short summary or points (choose any one which suitable by yourself, mostly prefer points)
+    - give it in human readable format like topic then content in points.
 
 
 ### TEXT: 
@@ -203,7 +298,7 @@ def analys_CV_1(CV):
     As a helpful CV creator assistant, Your task is to make best CV by rephrase the details in points.
     the based on the given experience,skill and education and you do if any field is "" then leave it as (not mentioned) wont fill anything, dont put optional on empty.
     
-    - give it in readable format like topic then content in points
+    - give it in readable format like topic then content in points.
    
     
     
@@ -225,88 +320,11 @@ def analys_CV_1(CV):
     # print(f"result : {res}")
     return res
 
-def similarity(cv,jd):
-    user_input = f"""  
-    ### Curriculum Vitae:
-    {cv}
-    
-    ### job description:
-    {jd}
-
-    """
-
-    temp = """### System
-As a helpful CV and JD compare assistant, your task is to find the ATS score of the cv based on the jd.
-- the output format is ATS score(rational number) of CV based on JD use cosine similarity.
-
-### TEXT:
-{user_input}
-
-### Assistant:"""
-    sampling_params = {"temperature": 0.1,"top_p": 0.1,"max_tokens": 4096}
-    input_prompts = temp.format(user_input=user_input)
-    intent_anse = hit_vllm_model(input_prompts, sampling_params=sampling_params)
-    return intent_anse.replace(input_prompts,"")
-
-
-
-
-def Pdf_to_jd_extract(pdf_text):
-    temp ="""###system
-You are a helpful assistant. your task is find the information from the text which the textis extracted from the jobdescription.
-Return the output in JSON format to parse the details.
-
-### TEXT: 
-{input} 
-
-### Assistant:"""
-
-    sampling_params = {
-    "temperature" : 0.7,
-    "top_p" : 0.3,
-    "max_tokens" : 4096,
-
-    }
-
-    input_prompts = temp.format(input=pdf_text)
-    intent_anse = hit_vllm_model(input_prompts,sampling_params=sampling_params)
-    return intent_anse.replace(input_prompts,"")
- 
-
-
-def matching_jd_cv(CV,JD):
-    user_input = f"""  
-    ### Curriculum Vitae:
-    {CV}
-    
-    ### job description:
-    {JD}
-
-    """
-    temp ="""###system
-You are a helpful assistant. Your task is to create a perfect CV by analyzing the given job description (JD). Tailor the resume to best fit the requirements and qualifications outlined in the job description.
-
-### TEXT: 
-{input} 
-
-### Assistant:"""
-
-    sampling_params = {
-        "temperature" : 0.7, 
-        "top_p" : 0.3,
-        "max_tokens" : 4096,
-    }
-
-    input_prompts = temp.format(input=user_input)
-    intent_anse = hit_vllm_model(input_prompts, sampling_params=sampling_params)
-    return intent_anse.replace(input_prompts, "")
-
-
 def jd_json(user_input):
 
     temp ="""###system
 You are a helpful assistant. your task is find the information from the text which the text is extracted from the job description.
-Return the output in JSON format to parse the details.
+
 
 The details you have to collect from the text:
 
@@ -314,6 +332,7 @@ The details you have to collect from the text:
 2.COMPANY_EMAIL
 3.JOB_TITLE
 
+Return the output strictly in **valid JSON** format with clear keys and properly formatted lists.
 
 ### TEXT: 
 {input} 
@@ -333,13 +352,14 @@ The details you have to collect from the text:
 def job_recommend(user_input):
     temp ="""###system
 You are a professional job recommendation assistant. your task is to recommend a best job based the canditate resume.
-Return the output in JSON format to parse the details.
+
 
 The details you have to give:
 
 1.JOB
 2.REASONS - Explain as if you are speaking to candidates, highlighting the key technical skills required to achieve success in a single concise line.
 
+Return the output strictly in **valid JSON** format with clear keys and properly formatted lists.
 
 ### TEXT: 
 {input} 
@@ -370,19 +390,40 @@ jd_file = st.sidebar.file_uploader("Upload Job Description", type=["pdf"])
 # Main content
 if cv_file and jd_file:
     
-    pdf_text = pdf_to_text(jd_file)
-    JD_data = Pdf_to_jd_extract(pdf_text) # this is in json format str
-   
-    try:
-     response_dict = json.loads(JD_data) # this is in json format dict
-     json.dumps(response_dict),
-    except json.JSONDecodeError:
-     response_dict = {}
+    flag = int(input(
+    "\nEnter your choice:\n"
+    "  1 → Use uploaded JD\n"
+    "  2 → Create prompted JD\n"
+    "Choice: "
+))
+
+    if flag ==1:
+
+        pdf_text = pdf_to_text(jd_file)
+        JD_data = Pdf_to_jd_extract(pdf_text) # this is in json format str
+        try:
+            response_dict = json.loads(JD_data) # this is in json format dict
+            json.dumps(response_dict),
+        except json.JSONDecodeError:
+            response_dict = {}
+
+    else:
+        JD_data = create_jd("full stack developer")
+
+        try:
+            response_dict = json.loads(JD_data) # this is in json format dict
+            json.dumps(response_dict),
+        except json.JSONDecodeError:
+            response_dict = {}
+
+    print(JD_data)
+    print('-'*90)
+    print(response_dict)
    
     for cv in cv_file:
         pdf_text = pdf_to_text(cv)
         cv_data = Pdf_to_CV_extract(pdf_text) # this is in json format str
-        print(f'just printing -> {cv_data}')
+        # print(f'just printing -> {cv_data}')
        
         try:
          response_dict_1 = json.loads(cv_data)  # this is in json format dict
@@ -437,7 +478,6 @@ if cv_file and jd_file:
         # print(response_dict_1)
 
         compare_cv_jd_similarity= calculate_similarity(compare_cv_jd_matcher, response_dict )
-
         st.write(":blue[compare_cv_jd_similarity]", compare_cv_jd_similarity)
 
         normal_cv_jd_similarity = calculate_similarity(response_dict_1, response_dict)
@@ -525,3 +565,5 @@ if cv_file and jd_file:
                 
 
         process_and_send_email(compare_cv_jd_similarity, JD_data, response_dict_1, send_email,cv_data)
+
+        
