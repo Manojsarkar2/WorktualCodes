@@ -350,21 +350,23 @@ Return the output strictly in **valid JSON** format with clear keys and properly
     return intent_anse.replace(input_prompts, "")
 
 def job_recommend(user_input):
-    temp ="""###system
-You are a professional job recommendation assistant. your task is to recommend a best job based the canditate resume.
+    temp = """### System
+You are a **professional career recommendation assistant**. 
+Your goal is to carefully read the candidate’s resume and recommend the **single most suitable job role** for them. 
 
+### Instructions
+- Always output in **valid JSON** format (no extra text, no explanations outside JSON).
+- JSON must have exactly **two keys**:
+  1. "JOB": A string with the best recommended job title.
+  2. "REASONS": A list of 2-4 concise points, speaking directly to the candidate, each point highlighting a **key skill or strength** from their resume that supports the recommendation.
+- Keep reasons short and motivating (one line each).
+- Do not include markdown, commentary, or system text in the output — only JSON.
 
-The details you have to give:
+### Candidate Resume:
+{input}
 
-1.JOB
-2.REASONS - Explain as if you are speaking to candidates, highlighting the key technical skills required to achieve success in a single concise line.
-
-Return the output strictly in **valid JSON** format with clear keys and properly formatted lists.
-
-### TEXT: 
-{input} 
-
-### Assistant:"""
+### Assistant:
+"""
 
     sampling_params = {
         "temperature" : 0.7,
@@ -375,8 +377,6 @@ Return the output strictly in **valid JSON** format with clear keys and properly
     input_prompts = temp.format(input=user_input)
     intent_anse = hit_vllm_model(input_prompts, sampling_params=sampling_params)
     return intent_anse.replace(input_prompts, "")
-
-
 
 
 # Streamlit UI
@@ -408,7 +408,39 @@ if cv_file and jd_file:
             response_dict = {}
 
     else:
-        JD_data = create_jd("full stack developer")
+        jd = """
+Job Title: Full Stack Developer
+Location: Bangalore, India
+Employment Type: Full-time
+Experience Required: 2-5 years
+
+Responsibilities:
+- Design, develop, and maintain scalable web applications.
+- Work on both frontend and backend components.
+- Collaborate with designers, product managers, and other developers.
+- Write clean, maintainable, and efficient code.
+- Implement RESTful APIs and integrate third-party services.
+- Ensure applications are optimized for performance and security.
+
+Skills Required:
+- Proficiency in JavaScript, HTML, CSS.
+- Experience with frontend frameworks like React, Angular, or Vue.
+- Backend experience with Node.js, Django, or Spring Boot.
+- Database knowledge: MySQL, PostgreSQL, MongoDB.
+- Familiarity with cloud services (AWS, Azure, or GCP).
+- Version control using Git/GitHub.
+
+Education:
+- Bachelor’s degree in Computer Science or related field.
+
+Perks & Benefits:
+- Health insurance
+- Flexible working hours
+- Learning & development budget
+- Work from home options
+"""
+
+        JD_data = create_jd(jd)
 
         try:
             response_dict = json.loads(JD_data) # this is in json format dict
@@ -416,9 +448,6 @@ if cv_file and jd_file:
         except json.JSONDecodeError:
             response_dict = {}
 
-    print(JD_data)
-    print('-'*90)
-    print(response_dict)
    
     for cv in cv_file:
         pdf_text = pdf_to_text(cv)
@@ -445,7 +474,7 @@ if cv_file and jd_file:
 
         st.write("Matching CV:\n", rephrase_cv)
         rephrase_cv_1 = analys_CV_1(cv_data)
-        # rephrase_cv_1 = rephrase_cv_1.replace("Email:", "\nEmail:").replace("Phone:", "\nPhone:").replace("Address:", "\nAddress:").replace("LinkedIn:", "\nLinkedIn:").replace("GitHub:", "\nGitHub:").replace("Objective:","\nObjective:")
+        
         st.write("Matching CV_1:\n\n", rephrase_cv_1)
 
 
@@ -512,12 +541,12 @@ if cv_file and jd_file:
             our_mail = "encovatehr@gmail.com"
             our_passcode = "ijvo dgrc kkxe hduw"
 
-            if check > 40.00:
+            if check > 800.00:
                
                 subject = f"Shortlisted for the Next Round - {job_title} at {company_name}"
                 body = (
                     f"Dear {name},\n\n"
-                    f"  We are pleased to inform you that you have been shortlisted for the next stage of the recruitment process "
+                    f"  We are pleased to inf1orm you that you have been shortlisted for the next stage of the recruitment process "
                     f"for the position of {job_title} at {company_name}.\n\n"
                     f"Our recruitment team will be in touch with further details regarding the next steps. "
                     f"If you have any questions or require clarification, please feel free to contact us at {company_email}.\n\n"
@@ -538,13 +567,15 @@ if cv_file and jd_file:
             else:
                 try:
                     job = job_recommend(cv_data)
-                    job = json.loads(job)
+                    print(job)
+                    jobs = json.loads(job)
+                    print(jobs)
                 except (ValueError, json.JSONDecodeError, Exception) as e:
                     print(f"Error while parsing JD JSON: {e}")
-                    job = {}
-                # print(job)
-                recommended_jobtitle = job.get('JOB')
-                recommended_jobcontent = job.get('REASONS')
+                    jobs = {}
+                
+                recommended_jobtitle = jobs.get('JOB')
+                recommended_jobcontent = jobs.get('REASONS')
                 subject = f"Application update - {job_title} at {company_name}"
                 body = (
                         f"Dear {name},\n\n"
