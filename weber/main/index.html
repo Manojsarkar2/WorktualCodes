@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo.png" alt="Medical Logo">
+                <h1>Medical Center</h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li id="auth-links">
+                    <a href="#" id="login-link">Login</a>
+                    <a href="#" id="signup-link">Sign Up</a>
+                    <a href="#" id="logout-link" style="display: none;">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Your Health, Our Priority</h2>
+            <p>Providing quality medical care with compassion and expertise.</p>
+            <a href="#" class="button">Book Appointment</a>
+        </div>
+        <div class="hero-image">
+            <img src="img/doctor.jpg" alt="Doctor">
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3>General Checkup</h3>
+                <p>Comprehensive health assessment for early detection and prevention.</p>
+            </div>
+            <div class="service-item">
+                <h3>Cardiology</h3>
+                <p>Specialized care for heart-related conditions and treatments.</p>
+            </div>
+            <div class="service-item">
+                <h3>Neurology</h3>
+                <p>Expert diagnosis and treatment for neurological disorders.</p>
+            </div>
+            <div class="service-item">
+                <h3>Pediatrics</h3>
+                <p>Dedicated medical care for infants, children, and adolescents.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctors">
+        <h2>Our Doctors</h2>
+        <div class="doctor-grid">
+            <div class="doctor-item">
+                <img src="https://via.placeholder.com/150" alt="Doctor 1">
+                <h3>Dr. John Doe</h3>
+                <p>Cardiologist</p>
+            </div>
+            <div class="doctor-item">
+                <img src="https://via.placeholder.com/150" alt="Doctor 2">
+                <h3>Dr. Jane Smith</h3>
+                <p>Neurologist</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Medical Center. All rights reserved.</p>
+    </footer>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="login-form" style="display: none;">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button id="login-button">Login</button>
+                <p id="login-error" class="error-message"></p>
+            </div>
+            <div id="signup-form" style="display: none;">
+                <h2>Sign Up</h2>
+                <input type="email" id="signup-email" placeholder="Email">
+                <input type="password" id="signup-password" placeholder="Password">
+                <button id="signup-button">Sign Up</button>
+                <p id="signup-error" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

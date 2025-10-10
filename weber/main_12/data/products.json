@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "AI Assistant",
+        "description": "Your personal AI assistant for productivity.",
+        "price": 99.99,
+        "image": "assets/product1.jpg"
+    },
+    {
+        "id": "2",
+        "name": "AI Analytics",
+        "description": "Powerful AI analytics for business insights.",
+        "price": 199.99,
+        "image": "assets/product2.jpg"
+    },
+    {
+        "id": "3",
+        "name": "AI Security",
+        "description": "Advanced AI security solutions for your peace of mind.",
+        "price": 299.99,
+        "image": "assets/product3.jpg"
+    }
+]

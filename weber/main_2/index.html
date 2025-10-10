@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Chatbot Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Chatbot!</h1>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" id="logout-link" style="display: none;">Logout</a></li>
+                <li><a href="auth/login.html" id="login-link">Login</a></li>
+                <li><a href="auth/signup.html" id="signup-link">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="chat-container">
+            <div id="chat-log">
+                <!-- Chat messages will be displayed here -->
+            </div>
+            <div id="input-area">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Best Chatbot Website</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="auth/auth.js"></script>
+</body>
+</html>
