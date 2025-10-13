@@ -1,0 +1,23 @@
+[
+    {
+        "id": "product1",
+        "name": "AI-Powered Marketing Automation",
+        "description": "Automate your marketing campaigns with our AI-driven platform. Increase efficiency and drive better results.",
+        "price": 299.99,
+        "image": "assets/product1.jpg"
+    },
+    {
+        "id": "product2",
+        "name": "Smart Customer Service Chatbot",
+        "description": "Enhance your customer service with our intelligent chatbot. Provide instant support and improve customer satisfaction.",
+        "price": 199.99,
+        "image": "assets/product2.jpg"
+    },
+    {
+        "id": "product3",
+        "name": "Predictive Analytics Dashboard",
+        "description": "Gain insights into your business with our predictive analytics dashboard. Make data-driven decisions and stay ahead of the competition.",
+        "price": 399.99,
+        "image": "assets/product3.jpg"
+    }
+]

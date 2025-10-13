@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "Echo Dot (5th Gen, 2022 release) | Smart speaker with Alexa | Charcoal",
+        "description": "Our best sounding Echo Dot yet - Enjoy an improved audio experience compared to previous Echo Dot with Alexa for clearer vocals, deeper bass and vibrant sound in any room.",
+        "price": 49.99,
+        "image": "assets/images/product1.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Fire TV Stick (3rd Gen) with Alexa Voice Remote | HD streaming device",
+        "description": "Endless entertainment: Stream more than 1 million movies and TV episodes from Netflix, Prime Video, Disney+, Peacock, and more, plus listen to millions of songs.",
+        "price": 39.99,
+        "image": "assets/images/product2.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Kindle Paperwhite (16 GB) – Now with a 6.8\" display and adjustable warm light",
+        "description": "Purpose-built for reading – With a flush-front design and 300 ppi glare-free display that reads like real paper, even in bright sunlight.",
+        "price": 139.99,
+        "image": "assets/images/product3.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Amazon Basics Lightweight Microfiber Sheet Set - Twin, White",
+        "description": "Twin sheet set includes a 66 x 96 inch flat sheet, 39 x 75 x 12 inch fitted sheet, and 20 x 30 inch pillowcase",
+        "price": 19.99,
+        "image": "assets/images/product4.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Amazon Basics Enameled Cast Iron Covered Dutch Oven - 6-Quart, Blue",
+        "description": "Durable cast-iron construction for even heating and superior heat retention",
+        "price": 54.99,
+        "image": "assets/images/product5.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Amazon Basics 48 Pack AA High-Performance Alkaline Batteries, 10-Year Shelf Life",
+        "description": "48-pack of 1.5V AA alkaline batteries for reliable performance across a wide range of devices",
+        "price": 16.99,
+        "image": "assets/images/product6.jpg"
+    }
+]

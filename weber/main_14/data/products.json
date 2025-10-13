@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "AI-Powered Marketing Automation",
+        "description": "Automate your marketing campaigns with AI and personalize customer experiences.",
+        "price": 499,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 2,
+        "name": "Predictive Analytics Platform",
+        "description": "Predict future trends and make data-driven decisions with our advanced analytics platform.",
+        "price": 799,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 3,
+        "name": "AI Chatbot for Customer Support",
+        "description": "Improve customer satisfaction with our AI chatbot that provides instant support.",
+        "price": 299,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 4,
+        "name": "AI-Driven Cybersecurity Solution",
+        "description": "Protect your business from cyber threats with our AI-driven security solution.",
+        "price": 999,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 5,
+        "name": "Smart Inventory Management System",
+        "description": "Optimize your inventory levels and reduce costs with our smart management system.",
+        "price": 599,
+        "image": "https://via.placeholder.com/150"
+    }
+]

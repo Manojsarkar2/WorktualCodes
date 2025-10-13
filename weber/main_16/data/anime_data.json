@@ -1,0 +1,56 @@
+[
+    {
+        "id": "1",
+        "title": "Attack on Titan",
+        "imageUrl": "assets/images/anime1.jpg",
+        "description": "In a world where humanity lives inside cities surrounded by enormous walls that protect them from gigantic humanoid creatures referred to as Titans, the story follows Eren Yeager, who vows to exterminate the Titans after a Titan brings about the destruction of his hometown and the death of his mother.",
+        "genres": ["Action", "Drama", "Fantasy"],
+        "rating": 4.8,
+        "year": 2013
+    },
+    {
+        "id": "2",
+        "title": "Naruto Shippuden",
+        "imageUrl": "assets/images/anime2.jpg",
+        "description": "Naruto Uzumaki returns to Konoha after training with Jiraiya for two and a half years. The Akatsuki begin to make their move, and Naruto must confront them to protect his friends and the world.",
+        "genres": ["Action", "Adventure", "Comedy"],
+        "rating": 4.7,
+        "year": 2007
+    },
+    {
+        "id": "3",
+        "title": "One Piece",
+        "imageUrl": "assets/images/anime3.jpg",
+        "description": "Monkey D. Luffy sets out to become the King of the Pirates by finding the legendary treasure left behind by the late Pirate King, Gol D. Roger. With his Straw Hat Pirates, he explores the Grand Line in search of adventure and fortune.",
+        "genres": ["Action", "Adventure", "Comedy"],
+        "rating": 4.6,
+        "year": 1999
+    },
+    {
+        "id": "4",
+        "title": "Death Note",
+        "imageUrl": "assets/images/anime4.jpg",
+        "description": "A high school student named Light Yagami discovers a mysterious notebook that grants him the power to kill anyone whose name is written in it. He decides to use the Death Note to rid the world of criminals and create a new world order, but his actions attract the attention of a brilliant detective known only as L.",
+        "genres": ["Mystery", "Thriller", "Supernatural"],
+        "rating": 4.9,
+        "year": 2006
+    },
+    {
+        "id": "5",
+        "title": "Fullmetal Alchemist: Brotherhood",
+        "imageUrl": "assets/images/anime5.jpg",
+        "description": "Two brothers, Edward and Alphonse Elric, embark on a quest to restore their bodies after a failed attempt to bring their mother back to life through alchemy. They seek the Philosopher's Stone, a legendary artifact that can amplify alchemical abilities.",
+        "genres": ["Action", "Adventure", "Drama"],
+        "rating": 4.8,
+        "year": 2009
+    },
+    {
+        "id": "6",
+        "title": "My Hero Academia",
+        "imageUrl": "assets/images/anime6.jpg",
+        "description": "In a world where the majority of the population possesses superpowers known as Quirks, Izuku Midoriya dreams of becoming a hero despite being born without a Quirk. His life changes when he encounters the world's greatest hero, All Might, who passes on his Quirk to Izuku.",
+        "genres": ["Action", "Comedy", "School"],
+        "rating": 4.7,
+        "year": 2016
+    }
+]

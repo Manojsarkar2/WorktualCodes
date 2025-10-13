@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Haven</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Anime Haven</div>
+            <button class="hamburger">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home" data-page="home">Home</a></li>
+                <li><a href="#new-arrivals" data-page="new-arrivals">New Arrivals</a></li>
+                <li><a href="#figures" data-page="figures">Figures</a></li>
+                <li><a href="#manga" data-page="manga">Manga</a></li>
+                <li><a href="#apparel" data-page="apparel">Apparel</a></li>
+                <li><a href="#contact" data-page="contact">Contact</a></li>
+                <li><button id="theme-toggle">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="home" class="active">
+            <h1>Welcome to Anime Haven</h1>
+            <p>Your ultimate destination for all things anime!</p>
+            <p>Explore our wide selection of figures, manga, apparel, and more.</p>
+        </section>
+
+        <section id="new-arrivals" class="hidden">
+            <h2>New Arrivals</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <h3>Demon Slayer Figure</h3>
+                    <p>High-quality figure of Tanjiro Kamado.</p>
+                    <p class="price">$59.99</p>
+                </div>
+                <div class="product">
+                    <h3>Attack on Titan Manga Vol. 1</h3>
+                    <p>Start your Attack on Titan journey!</p>
+                    <p class="price">$12.99</p>
+                </div>
+                <div class="product">
+                    <h3>My Hero Academia T-Shirt</h3>
+                    <p>Stylish t-shirt featuring Deku.</p>
+                    <p class="price">$24.99</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="figures" class="hidden">
+            <h2>Figures</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <h3>Naruto Uzumaki Figure</h3>
+                    <p>Detailed Naruto figure from Shippuden.</p>
+                    <p class="price">$69.99</p>
+                </div>
+                <div class="product">
+                    <h3>Sailor Moon Figure</h3>
+                    <p>Elegant Sailor Moon figure.</p>
+                    <p class="price">$79.99</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="manga" class="hidden">
+            <h2>Manga</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <h3>One Piece Vol. 100</h3>
+                    <p>The latest volume of One Piece!</p>
+                    <p class="price">$9.99</p>
+                </div>
+                <div class="product">
+                    <h3>Berserk Deluxe Edition Vol. 1</h3>
+                    <p>Experience Berserk in a deluxe format.</p>
+                    <p class="price">$49.99</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="apparel" class="hidden">
+            <h2>Apparel</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <h3>Anime Haven Hoodie</h3>
+                    <p>Stay warm with our exclusive hoodie.</p>
+                    <p class="price">$39.99</p>
+                </div>
+                <div class="product">
+                    <h3>Anime Socks</h3>
+                    <p>Comfortable and stylish anime socks.</p>
+                    <p class="price">$14.99</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anime Haven. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -473,14 +473,11 @@ async def handle_client(websocket):
             text,lang = await websocket_obj.process_text_data(text_data)
             print("Language: ",lang)
             
-
-                
             if lang in tts_obj.support_lang_dict:
                 lang_data=tts_obj.support_lang_dict[lang]
 
             else:
                 lang_data=tts_obj.support_lang_dict['en']
-                
                 
             if text==1:
                 tts_obj.event_listener = False

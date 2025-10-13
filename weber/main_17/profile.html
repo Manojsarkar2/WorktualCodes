@@ -1,0 +1,35 @@
+<div class="glassmorphism">
+    <h2>Profile</h2>
+    <p>Welcome to your profile page!</p>
+    <div id="profile-details">
+        <!-- Profile details will be dynamically loaded here -->
+    </div>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+    function logout() {
+        localStorage.removeItem('user');
+        window.location.hash = '#home';
+        renderView('home');
+    }
+
+    // Function to display user profile details
+    function displayProfileDetails() {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            const user = JSON.parse(storedUser);
+            const profileDetailsDiv = document.getElementById('profile-details');
+            profileDetailsDiv.innerHTML = `
+                <p>Email: ${user.email}</p>
+                <!-- Add more profile details here -->
+            `;
+        } else {
+            window.location.hash = '#login';
+            renderView('login');
+        }
+    }
+
+    // Call displayProfileDetails when the profile page is loaded
+    displayProfileDetails();
+</script>
