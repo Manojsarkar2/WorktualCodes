@@ -1,0 +1,16 @@
+{
+    "name": "streamverse",
+    "version": "1.0.0",
+    "description": "A simple video streaming website",
+    "main": "script.js",
+    "scripts": {
+      "start": "live-server"
+    },
+    "dependencies": {
+      "live-server": "^1.2.1"
+    },
+    "devDependencies": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }

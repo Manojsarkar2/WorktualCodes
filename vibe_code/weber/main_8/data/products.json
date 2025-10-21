@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "price": 25.00,
+        "image": "assets/placeholder.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "price": 15.00,
+        "image": "assets/placeholder.jpg"
+    }
+]

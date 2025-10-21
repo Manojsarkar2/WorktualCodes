@@ -1,0 +1,10 @@
+[
+    { "id": 1, "name": "Minimalist Sofa", "price": 1200.00, "image": "assets/images/product1.jpg", "category": "Living Room" },
+    { "id": 2, "name": "Scandinavian Armchair", "price": 450.00, "image": "assets/images/product2.jpg", "category": "Living Room" },
+    { "id": 3, "name": "Modern Dining Table", "price": 800.00, "image": "assets/images/product3.jpg", "category": "Kitchen" },
+    { "id": 4, "name": "Velvet Bed Frame", "price": 950.00, "image": "assets/images/product4.jpg", "category": "Bedroom" },
+    { "id": 5, "name": "Geometric Bookshelf", "price": 300.00, "image": "assets/images/product1.jpg", "category": "Living Room" },
+    { "id": 6, "name": "Ceramic Vase Set", "price": 75.00, "image": "assets/images/product2.jpg", "category": "Decor" },
+    { "id": 7, "name": "Oak Wood Desk", "price": 600.00, "image": "assets/images/product3.jpg", "category": "Office" },
+    { "id": 8, "name": "Abstract Wall Art", "price": 120.00, "image": "assets/images/product4.jpg", "category": "Decor" }
+]

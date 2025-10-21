@@ -1,0 +1,7 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "html.format.wrapLineLength": 120,
+  "css.format.wrapLineLength": 120,
+  "javascript.format.semicolons": "insert"
+}

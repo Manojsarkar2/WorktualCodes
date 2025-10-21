@@ -1,1 +1,0 @@
-// Carousel functionality would be implemented here if needed

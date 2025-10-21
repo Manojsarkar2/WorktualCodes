@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Living Room", "image": "assets/images/living-room.jpg" },
+    { "id": 2, "name": "Bedroom", "image": "assets/images/bedroom.jpg" },
+    { "id": 3, "name": "Kitchen", "image": "assets/images/kitchen.jpg" },
+    { "id": 4, "name": "Bathroom", "image": "assets/images/bathroom.jpg" }
+]

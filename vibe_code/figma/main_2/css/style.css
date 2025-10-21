@@ -1,0 +1,119 @@
+:root {
+    --primary-color: #2874F0;
+    --secondary-color: #FFFFFF;
+    --background-color: #F0F2F5;
+    --accent-color: #FF9F00;
+    --heading-font: Roboto, sans-serif;
+    --body-font: Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 5px;
+    width: 70%;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 80%;
+}
+
+/* Category Section */
+.category-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    margin-top: 10px;
+}
+
+.category-icon {
+    text-align: center;
+}
+
+/* Banner Section */
+.banner-section {
+    margin-top: 10px;
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+
+/* Featured Products */
+.featured-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Product Card */
+.product-card {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Bottom Navigation */
+.bottom-navigation {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 600px; /* Match app max-width */
+}
+
+.bottom-navigation button {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.active {
+    font-weight: bold;
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "id": "ai-powered-analytics",
+        "name": "AI-Powered Analytics",
+        "description": "Unlock hidden insights with our advanced AI analytics platform. Analyze data, predict trends, and optimize your business strategy.",
+        "price": 499.99,
+        "image": "assets/product1.jpg"
+    },
+    {
+        "id": "intelligent-automation",
+        "name": "Intelligent Automation",
+        "description": "Automate repetitive tasks and streamline workflows with our intelligent automation solutions. Boost productivity and reduce operational costs.",
+        "price": 799.99,
+        "image": "assets/product2.jpg"
+    },
+    {
+        "id": "personalized-recommendations",
+        "name": "Personalized Recommendations",
+        "description": "Enhance customer engagement with AI-driven personalized recommendations. Increase sales and improve customer satisfaction.",
+        "price": 599.99,
+        "image": "assets/product3.jpg"
+    },
+    {
+        "id": "ai-chatbots",
+        "name": "AI Chatbots",
+        "description": "Provide instant customer support with our AI chatbots. Available 24/7 to answer questions and resolve issues.",
+        "price": 399.99,
+        "image": "assets/product1.jpg"
+    },
+    {
+        "id": "predictive-maintenance",
+        "name": "Predictive Maintenance",
+        "description": "Reduce downtime and maintenance costs with our predictive maintenance solutions. Identify potential equipment failures before they occur.",
+        "price": 899.99,
+        "image": "assets/product2.jpg"
+    }
+]

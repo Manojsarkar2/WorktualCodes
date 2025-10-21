@@ -1,0 +1,19 @@
+.home-view {
+    /* Styles for the home view */
+}
+
+.product-listing-view {
+    /* Styles for the product listing view */
+}
+
+.product-details-view {
+    /* Styles for the product details view */
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+}

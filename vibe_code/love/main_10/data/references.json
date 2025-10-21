@@ -1,0 +1,20 @@
+[
+    {
+        "id": "html",
+        "title": "HTML Reference",
+        "description": "Complete HTML reference guide.",
+        "link": "#"
+    },
+    {
+        "id": "css",
+        "title": "CSS Reference",
+        "description": "Comprehensive CSS reference guide.",
+        "link": "#"
+    },
+    {
+        "id": "javascript",
+        "title": "JavaScript Reference",
+        "description": "Detailed JavaScript reference guide.",
+        "link": "#"
+    }
+]

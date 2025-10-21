@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Haven</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Anime Haven</div>
+            <button class="hamburger">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home" data-page="home">Home</a></li>
+                <li><a href="#products" data-page="products">Products</a></li>
+                <li><a href="#new-releases" data-page="new-releases">New Releases</a></li>
+                <li><a href="#contact" data-page="contact">Contact</a></li>
+                <li><a href="#login" data-page="login">Login</a></li>
+                <li><a href="#signup" data-page="signup">Signup</a></li>
+                <li><button id="theme-toggle">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="home" class="page active">
+            <h1>Welcome to Anime Haven</h1>
+            <p>Your ultimate destination for all things anime!</p>
+            <p>Explore our vast collection of figures, manga, apparel, and more.</p>
+            <div class="featured-products">
+                <h2>Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product">
+                        <h3>Attack on Titan - Eren Yeager Figure</h3>
+                        <p>Highly detailed Eren Yeager figure from Attack on Titan.</p>
+                        <button>Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <h3>Demon Slayer - Tanjiro Kamado Sword</h3>
+                        <p>Replica of Tanjiro Kamado's iconic sword from Demon Slayer.</p>
+                        <button>Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <h3>My Hero Academia - All Might T-Shirt</h3>
+                        <p>Stylish All Might t-shirt from My Hero Academia.</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="page">
+            <h2>Products</h2>
+            <div class="product-filter">
+                <input type="text" id="search-input" placeholder="Search products...">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="figures">Figures</option>
+                    <option value="manga">Manga</option>
+                    <option value="apparel">Apparel</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+            </div>
+            <div class="product-grid" id="product-list">
+                <!-- Product list will be dynamically populated here -->
+            </div>
+        </section>
+
+        <section id="new-releases" class="page">
+            <h2>New Releases</h2>
+            <div class="new-release-grid">
+                <div class="new-release">
+                    <h3>One Piece - Gear 5 Luffy Figure</h3>
+                    <p>The latest Gear 5 Luffy figure from One Piece!</p>
+                    <button>Pre-order Now</button>
+                </div>
+                <div class="new-release">
+                    <h3>Jujutsu Kaisen - Volume 18 Manga</h3>
+                    <p>The newest volume of Jujutsu Kaisen is here!</p>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="login" class="page">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="login-email" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="signup" class="page">
+            <h2>Signup</h2>
+            <form id="signup-form">
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" name="signup-name" required>
+
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+
+                <button type="submit">Signup</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anime Haven. All rights reserved.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>Modal Content</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: rgb(32, 31, 49);
+    color: rgb(238, 238, 238);
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(32, 31, 49, 0.9);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: rgb(238, 238, 238);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #bbb;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: rgb(238, 238, 238);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+main {
+    padding: 2rem;
+    min-height: 70vh;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(32, 31, 49, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+/* Home Page Styles */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.featured-anime {
+    margin-top: 2rem;
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.anime-item {
+    background-color: #444;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Browse Page Styles */
+.browse-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* Contact Page Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    margin-top: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #777;
+    background-color: #555;
+    color: rgb(238, 238, 238);
+}
+
+.contact-form button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #666;
+    color: rgb(238, 238, 238);
+    border: none;
+    cursor: pointer;
+}
+
+/* Login/Signup Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.auth-form label {
+    margin-top: 1rem;
+}
+
+.auth-form input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #777;
+    background-color: #555;
+    color: rgb(238, 238, 238);
+}
+
+.auth-form button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #666;
+    color: rgb(238, 238, 238);
+    border: none;
+    cursor: pointer;
+}
+
+/* Watch Page Styles */
+.watch-content {
+    text-align: center;
+}
+
+.video-player {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(32, 31, 49, 0.95);
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}

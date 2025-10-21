@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">E-Shop</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="product_listing.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-listing">
+            <h2>Products</h2>
+            <div class="product-grid">
+                <!-- Product items will be dynamically added here using JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-commerce Store</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample product data (replace with actual data from an API or database)
+            const products = [
+                { id: 1, name: 'Product 1', price: 25.99, image: 'https://via.placeholder.com/150' },
+                { id: 2, name: 'Product 2', price: 49.99, image: 'https://via.placeholder.com/150' },
+                { id: 3, name: 'Product 3', price: 19.99, image: 'https://via.placeholder.com/150' },
+                { id: 4, name: 'Product 4', price: 35.50, image: 'https://via.placeholder.com/150' },
+                { id: 5, name: 'Product 5', price: 55.00, image: 'https://via.placeholder.com/150' }
+            ];
+
+            const productGrid = document.querySelector('.product-grid');
+
+            // Function to display products
+            function displayProducts(products) {
+                productGrid.innerHTML = ''; // Clear existing products
+                products.forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.classList.add('product-item');
+                    productItem.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>$${product.price}</p>
+                        <button class="btn add-to-cart" data-product-id="${product.id}">Add to Cart</button>
+                    `;
+                    productGrid.appendChild(productItem);
+                });
+            }
+
+            // Initial display of products
+            displayProducts(products);
+
+            // Event listener for add to cart buttons
+            productGrid.addEventListener('click', function(event) {
+                if (event.target.classList.contains('add-to-cart')) {
+                    const productId = event.target.dataset.productId;
+                    // Implement add to cart functionality here (e.g., store in local storage)
+                    console.log('Product added to cart:', productId);
+                    alert('Product added to cart!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<div class="glassmorphism">
+    <h2>Settings</h2>
+    <p>Customize your AnimeRec experience.</p>
+    <label>
+        Dark Mode:
+        <input type="checkbox" id="dark-mode-toggle">
+    </label>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+
+        darkModeToggle.checked = currentTheme === 'dark';
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                setTheme('dark');
+            } else {
+                setTheme('light-mode');
+            }
+        });
+    });
+</script>

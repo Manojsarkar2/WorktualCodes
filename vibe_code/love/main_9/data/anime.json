@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Attack on Titan",
+        "genre": "Action",
+        "description": "Humans fight giants.",
+        "imageUrl": ""
+    },
+    {
+        "id": 2,
+        "title": "Naruto",
+        "genre": "Adventure",
+        "description": "A ninja seeks recognition.",
+        "imageUrl": ""
+    },
+    {
+        "id": 3,
+        "title": "One Piece",
+        "genre": "Adventure",
+        "description": "Pirates search for treasure.",
+        "imageUrl": ""
+    }
+]

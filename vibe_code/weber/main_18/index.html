@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">Flipkart</a>
+            </div>
+            <button class="hamburger">☰</button>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+                <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
+                <a href="#login">Login</a>
+                <a href="#signup">Signup</a>
+                <button id="theme-toggle">Dark Mode</button>
+                <input type="text" id="search-input" placeholder="Search products...">
+            </div>
+        </nav>
+    </header>
+
+    <main id="content">
+        <!-- Content will be loaded here -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Flipkart</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

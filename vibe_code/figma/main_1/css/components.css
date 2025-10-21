@@ -1,0 +1,133 @@
+.header {
+    background-color: #2874F0;
+    color: #FFFFFF;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.button {
+    background-color: #FF9F00;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.product-card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #2874F0;
+}
+
+.category-menu {
+    background-color: #FFFFFF;
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.category-item {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    background-color: #F0F2F5;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    background-color: #E0E0E0;
+}
+
+.image-slider {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-slider img {
+    width: 100%;
+    display: block;
+}
+
+.footer {
+    background-color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.dropdown select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #FF9F00;
+    color: #FFFFFF;
+    font-size: 0.7em;
+    padding: 2px 5px;
+    border-radius: 50%;
+}

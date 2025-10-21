@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Product 1",
+        "price": "₹199",
+        "image": "assets/product_image.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Product 2",
+        "price": "₹299",
+        "image": "assets/product_image.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Product 3",
+        "price": "₹399",
+        "image": "assets/product_image.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Product 4",
+        "price": "₹499",
+        "image": "assets/product_image.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Product 5",
+        "price": "₹599",
+        "image": "assets/product_image.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Product 6",
+        "price": "₹699",
+        "image": "assets/product_image.jpg"
+    }
+]

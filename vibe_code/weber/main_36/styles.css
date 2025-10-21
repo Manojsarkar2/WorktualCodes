@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    padding: 0 1.5rem;
+}
+
+.nav-menu li a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #007bff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+    min-height: 70vh;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #f8f9fa;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+/* Home Page Styles */
+#home-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+#home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#home-content p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* About Page Styles */
+#about-content {
+    padding: 2rem;
+}
+
+#about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about-content p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Services Page Styles */
+#services-content {
+    padding: 2rem;
+}
+
+#services-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#services-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+#services-content li {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Page Styles */
+#contact-content {
+    padding: 2rem;
+}
+
+#contact-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#contact-content form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact-content label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#contact-content input, #contact-content textarea {
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact-content button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#contact-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Chatbot Page Styles */
+#chatbot-content {
+    padding: 2rem;
+}
+
+#chatbot-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#chatbot-content .chat-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+#chatbot-content .user-message {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+#chatbot-content .bot-message {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#chatbot-content input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+#chatbot-content button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#chatbot-content button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Electronics"
+    },
+    {
+      "name": "Fashion"
+    },
+    {
+      "name": "Home & Furniture"
+    },
+    {
+      "name": "Books"
+    },
+    {
+      "name": "Sports"
+    },
+    {
+      "name": "Grocery"
+    },
+    {
+      "name": "Travel"
+    },
+    {
+      "name": "Beauty"
+    }
+  ]
+}

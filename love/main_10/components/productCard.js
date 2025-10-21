@@ -1,1 +1,0 @@
-<!-- Product Card Component (Populated Dynamically) -->

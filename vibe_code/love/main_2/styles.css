@@ -1,0 +1,184 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+#navbar {
+    background-color: #202020;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#navbar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#navbar li {
+    margin-left: 20px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#navbar a:hover {
+    color: #aaa;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Content */
+#content {
+    padding: 20px;
+    flex: 1;
+}
+
+/* Home Page */
+#home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-info {
+    padding: 10px;
+}
+
+.video-title {
+    font-size: 16px;
+    margin: 0;
+}
+
+.video-channel {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Watch Page */
+#watch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#watch iframe {
+    width: 80%;
+    height: 500px;
+    border: none;
+}
+
+/* Contact Page */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact label {
+    margin-top: 10px;
+}
+
+#contact input, #contact textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #202020;
+        text-align: center;
+    }
+
+    #navbar li {
+        margin: 0;
+        padding: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    #navbar ul.active {
+        display: flex;
+    }
+
+    #watch iframe {
+        width: 100%;
+        height: 300px;
+    }
+}

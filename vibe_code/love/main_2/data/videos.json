@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "title": "React Tutorial for Beginners",
+        "channel": "Programming with Mosh",
+        "videoUrl": "https://www.youtube.com/embed/Ke90Tje7VS0"
+    },
+    {
+        "id": "2",
+        "title": "Vue.js Crash Course",
+        "channel": "Traversy Media",
+        "videoUrl": "https://www.youtube.com/embed/4deVCNj5c60"
+    },
+    {
+        "id": "3",
+        "title": "Angular Full Course",
+        "channel": "Academind",
+        "videoUrl": "https://www.youtube.com/embed/k5E2AVpwsko"
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "label": "Grocery",
+        "icon": "assets/categories.svg"
+    },
+    {
+        "id": 2,
+        "label": "Mobiles",
+        "icon": "assets/categories.svg"
+    },
+    {
+        "id": 3,
+        "label": "Fashion",
+        "icon": "assets/categories.svg"
+    },
+    {
+        "id": 4,
+        "label": "Electronics",
+        "icon": "assets/categories.svg"
+    },
+    {
+        "id": 5,
+        "label": "Home",
+        "icon": "assets/categories.svg"
+    }
+]
