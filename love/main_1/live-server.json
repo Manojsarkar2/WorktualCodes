@@ -1,0 +1,9 @@
+{
+    "port": 5500,
+    "root": ".",
+    "file": "index.html",
+    "mount": [["/views", "./views"], ["/components", "./components"], ["/data", "./data"]],
+    "middleware": [
+        ["cors", {"origin": true}]
+    ]
+}

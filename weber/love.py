@@ -1,8 +1,9 @@
 import google.generativeai as genai
 import os
 import json
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body , HTTPException
 from pydantic import BaseModel
+import logging
 import uvicorn
 import asyncio
 from playwright.async_api import async_playwright
@@ -21,48 +22,17 @@ class UserRequest(BaseModel):
     requirement: str
 
 def create_project_from_json(data, base_dir="."):
-    project_structure = data.get("PROJECT_STRUCTURE", {})
+   
     code_files = data.get("CODE", {})
-
-    def process_structure(structure, current_path):
-        if isinstance(structure, dict):
-            for folder, sub in structure.items():
-                new_path = os.path.join(current_path, folder)
-                os.makedirs(new_path, exist_ok=True)
-                process_structure(sub, new_path)
-        elif isinstance(structure, list):
-            for file in structure:
-                full_path = os.path.join(current_path, file)
-                os.makedirs(os.path.dirname(full_path), exist_ok=True)
-
-                if os.path.isdir(full_path):
-                    continue
-
-                if file not in code_files:
-                    with open(full_path, "w", encoding="utf-8") as f:
-                        if file.endswith(".html"):
-                            f.write(f"<!-- Placeholder for {file} -->")
-                        elif file.endswith(".js"):
-                            f.write(f"// Placeholder for {file}")
-                        else:
-                            f.write("")
-                    print(f"📂 Created {full_path} (placeholder)")
-
-    process_structure(project_structure, base_dir)
-
     for file_path, file_content in code_files.items():
         full_path = os.path.join(base_dir, file_path)
         os.makedirs(os.path.dirname(full_path), exist_ok=True)
-
-        if os.path.exists(full_path):
-            print(f"⚠️ Overwriting {full_path}")
-
+        print(full_path)
         with open(full_path, "w", encoding="utf-8") as f:
             f.write(file_content)
-        print(f"✅ Wrote {full_path}")
 
 
-import json
+
 
 async def get_link(value):
   
@@ -127,12 +97,24 @@ async def get_link(value):
                     ];
                 }
             """)
+            # head_style = await page.evaluate("""
+            #     () => {
+            #         const styles = window.getComputedStyle(document.header);
+            #         return [
+            #             styles.backgroundColor || '',
+            #             styles.color || '',
+                       
+            #         ];
+            #     }
+            # """)
 
             await browser.close()
             return body_styles
 
 
     body_styles = await capture_and_extract(website_link)
+
+    print(body_styles)
 
     frontend_content_palette = f"""
     You are a code generator.
@@ -142,8 +124,11 @@ async def get_link(value):
 
     user requirement : {value}
     body_backgroundcolor : {body_styles[0]}
-    body_color : {body_styles[1]}
+    body_color : {body_styles[1]} 
     body_font_family : {body_styles[2]}
+    nav_color : #ffffff
+    nav_bg : #24292e
+    logo_color : #ffffff
     
 
 Build a modern, production-ready, single-folder SPA using only vanilla JavaScript, HTML, and CSS. No frameworks or rendering libraries—use a single script.js for all interactivity.
@@ -205,7 +190,6 @@ If any chance there a product navbar element put the products in div tag also cr
 Deliverable:  
     Output format:
     {{
-      "PROJECT_STRUCTURE": {{ "root": [ ... ] }},
       "CODE": {{ "file_path": "file content" }}
     }}
     """
@@ -218,16 +202,29 @@ Deliverable:
     raw_output = response.text.strip()
     if raw_output.startswith("```"):
         raw_output = raw_output.split("```json")[-1].split("```")[0].strip()
-
+   
     try:
         result = json.loads(raw_output)
+        logging.info("✅ JSON successfully parsed.")
     except json.JSONDecodeError as e:
-        return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
+        logging.error(f"JSON Decode Error: {e}")
+        raise HTTPException(status_code=400, detail="Invalid JSON format")
 
-    
-    create_project_from_json(result, base_dir="main_37")
+    try:
+        create_project_from_json(result, base_dir="main_40")
+        return {
+            "status": "✅ Project generated successfully",
+            "project_structure": result.get("PROJECT_STRUCTURE", {})
+        }
+    except Exception as e:
+        logging.error(f"Error creating project: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
-    return {"status": "✅ Project generated successfully", "project_structure": result["PROJECT_STRUCTURE"]}
+
+
+
+
+
 
 
 
@@ -281,7 +278,6 @@ async def generate_project(request: UserRequest = Body(...)):
     - Use Flexbox, Grid, media queries.
     - Make home page as professional real time based on the domain user give 
 
-
     4. UI/Styling
     - Keep the design elegant, minimal, and professional.
     - Use subtle gradients, clean layouts, and balanced whitespace.
@@ -334,7 +330,7 @@ async def generate_project(request: UserRequest = Body(...)):
             return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
 
         
-        create_project_from_json(result, base_dir="main_37")
+        create_project_from_json(result, base_dir="main_40")
 
         return {"status": "✅ Project generated successfully", "project_structure": result["PROJECT_STRUCTURE"]}
 

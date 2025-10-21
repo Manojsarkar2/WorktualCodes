@@ -1,0 +1,1 @@
+// Modal functionality is handled in script.js for simplicity

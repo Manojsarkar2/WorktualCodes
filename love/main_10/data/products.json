@@ -1,0 +1,20 @@
+[
+    {
+        "id": "product1",
+        "name": "Web Development Course",
+        "description": "A comprehensive course on web development.",
+        "price": 49.99
+    },
+    {
+        "id": "product2",
+        "name": "JavaScript Book",
+        "description": "A detailed guide to JavaScript programming.",
+        "price": 29.99
+    },
+    {
+        "id": "product3",
+        "name": "CSS Handbook",
+        "description": "Learn CSS with this easy-to-follow handbook.",
+        "price": 19.99
+    }
+]

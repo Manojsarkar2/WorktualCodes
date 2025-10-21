@@ -248,7 +248,7 @@ class G722RTPStreamer:
         queue.link(rtppay)
         rtppay.link(udpsink)
  
-        # Handle pipeline errors
+        
         bus = self.pipeline.get_bus()
         bus.add_signal_watch()
         bus.connect("message::error", self.on_error)
@@ -486,7 +486,7 @@ async def handle_client(websocket):
                 tts_obj = TTS_Initilize(serverAddressPort,websocket,lang_data,tts_streamer,session_id,ccaasNumber)
                 tts_obj.start_thread()  
             else:
-                tts_obj.language = lang_data
+                tts_obj.language = lang_data 
                 tts_obj.start_thread()
                 await asyncio.get_running_loop().run_in_executor(None, tts_obj.tts_buff_text.put,text)                   
 
