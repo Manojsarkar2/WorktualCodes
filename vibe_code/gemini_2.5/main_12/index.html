@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlipShop - Your Online Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" type="module" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#home" class="nav-logo">FlipShop</a>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for products, brands, and more">
+        <button id="search-btn">🔍</button>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item">
+          <a href="#cart" class="nav-link cart-link">
+            Cart <span class="cart-badge" id="cart-badge">0</span>
+          </a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="app-root" class="container"></main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 FlipShop. All rights reserved. A vanilla JS project.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

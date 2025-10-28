@@ -1,0 +1,22 @@
+{
+  "name": "amazon-like-spa",
+  "version": "1.0.0",
+  "description": "A single-page application resembling an Amazon-like store, built with vanilla JavaScript, HTML, and CSS.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --port=3000 --entry-file=index.html --wait=500",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "spa",
+    "vanilla-js",
+    "html",
+    "css",
+    "e-commerce"
+  ],
+  "author": "CodeGenerator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

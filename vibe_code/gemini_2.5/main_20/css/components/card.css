@@ -1,0 +1,30 @@
+/* General card styles, could be used for other generic elements */
+.card {
+    background-color: var(--color-text-light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xl);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Example of custom card variant */
+.card-dark {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+}
+
+.card-dark h4 {
+    color: var(--color-text-light);
+}
+
+.card-dark p {
+    color: var(--color-text-grey);
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: var(--spacing-lg);
+    }
+}

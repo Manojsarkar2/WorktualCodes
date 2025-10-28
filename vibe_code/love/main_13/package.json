@@ -1,0 +1,25 @@
+{
+  "name": "flipkart-spa",
+  "version": "1.0.0",
+  "description": "A modern, production-ready, single-folder SPA inspired by Flipkart, using only vanilla JavaScript, HTML, and CSS.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --port=3000 --entry-file=index.html --no-browser --config=live-server.json",
+    "dev": "live-server --port=3000 --entry-file=index.html --config=live-server.json",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "spa",
+    "vanilla-js",
+    "html",
+    "css",
+    "flipkart",
+    "e-commerce",
+    "single-page-application"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

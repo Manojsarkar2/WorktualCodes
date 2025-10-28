@@ -1,15 +1,22 @@
 {
-  "name": "w3school-inspired-spa",
+  "name": "amazon-spa",
   "version": "1.0.0",
-  "description": "A single-page application inspired by W3Schools, built with vanilla JavaScript.",
+  "description": "A modern, production-ready, single-folder SPA inspired by Amazon, built with vanilla JavaScript, HTML, and CSS.",
   "main": "script.js",
   "scripts": {
-    "start": "live-server --port=3000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server --config=live-server.json",
+    "test": "echo \"No tests specified\" && exit 0"
   },
-  "author": "Your Name",
+  "keywords": [
+    "spa",
+    "vanilla-js",
+    "amazon",
+    "ecommerce",
+    "responsive"
+  ],
+  "author": "CodeGenerator",
   "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.2"
   }
 }

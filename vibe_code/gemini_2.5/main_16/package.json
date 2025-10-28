@@ -1,0 +1,22 @@
+{
+  "name": "e-commerce-spa",
+  "version": "1.0.0",
+  "description": "A modern, production-ready e-commerce SPA using vanilla JavaScript, HTML, and CSS.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --port=8000 --host=localhost --open=index.html --wait=500 --entry-file=index.html --no-browser",
+    "dev": "live-server --port=8000 --host=localhost --open=index.html --wait=500 --entry-file=index.html"
+  },
+  "keywords": [
+    "spa",
+    "vanilla-js",
+    "e-commerce",
+    "html",
+    "css"
+  ],
+  "author": "CodeGenerator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

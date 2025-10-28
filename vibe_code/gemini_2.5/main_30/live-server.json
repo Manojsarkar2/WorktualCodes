@@ -1,0 +1,16 @@
+{
+  "port": 3000,
+  "host": "0.0.0.0",
+  "open": "/",
+  "file": "index.html",
+  "wait": 1000,
+  "mount": [
+    ["/components", "./components"],
+    ["/views", "./views"],
+    ["/data", "./data"]
+  ],
+  "logLevel": 2,
+  "middleware": [
+    "function(req, res, next) { next(); }"
+  ]
+}

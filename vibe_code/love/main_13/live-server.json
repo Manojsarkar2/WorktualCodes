@@ -1,0 +1,16 @@
+{
+    "port": 3000, 
+    "host": "0.0.0.0", 
+    "root": ".", 
+    "open": "/", 
+    "wait": 1000, 
+    "mount": [
+        ["/components", "./components"],
+        ["/views", "./views"],
+        ["/data", "./data"]
+    ],
+    "file": "index.html", 
+    "no-browser": false, 
+    "cors": true, 
+    "log-level": 2 
+}

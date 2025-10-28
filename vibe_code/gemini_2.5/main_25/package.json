@@ -1,0 +1,23 @@
+{
+  "name": "positivus-landing-page",
+  "version": "1.0.0",
+  "description": "A landing page for Positivus, built according to Figma design.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=./index.html --wait=500",
+    "dev": "live-server --port=3000 --open=./index.html --wait=500"
+  },
+  "keywords": [
+    "landing-page",
+    "frontend",
+    "html",
+    "css",
+    "javascript",
+    "figma"
+  ],
+  "author": "AI Code Generator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

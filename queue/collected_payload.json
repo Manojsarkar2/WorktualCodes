@@ -1,0 +1,28 @@
+{
+  "id": "2632",
+  "name": "manoj",
+  "description": "nlp",
+  "domainId": "7179",
+  "OutboundCallerId": "",
+  "outbound_call_status": true,
+  "outBoundNumber": "+44 0440424124124",
+  "maxCallHandlingTimeMM": 120,
+  "callWrapUpTime": 60,
+  "maximumCallers": {
+    "type": "No Limit",
+    "limitResponseType": 0,
+    "queueLimit": 0,
+    "overFlowQueueName": "",
+    "overFlowQueue": 0
+  },
+  "maximumWaitTime": {
+    "type": "Keep Waiting",
+    "maxWaitTime": 30,
+    "fallBackQueue": 0,
+    "file": {},
+    "timeElapsed": 0,
+    "timeElapsedValue": "",
+    "fallBackQueueName": "",
+    "fileName": ""
+  }
+}

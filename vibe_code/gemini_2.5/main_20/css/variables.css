@@ -1,0 +1,84 @@
+:root {
+    /* Colors */
+    --color-primary-green: #B9FF66;
+    --color-primary-dark: #191919;
+    --color-secondary-grey: #F3F3F3;
+    --color-secondary-lightgrey: #EDEDED;
+    --color-text-dark: #191919;
+    --color-text-light: #FFFFFF;
+    --color-text-grey: #808080;
+
+    /* Fonts */
+    --font-family-primary: 'Space Grotesk', sans-serif;
+
+    /* Font Sizes */
+    --font-size-hero-h1: 64px;
+    --font-size-h2: 56px;
+    --font-size-h3: 40px;
+    --font-size-h4: 24px;
+    --font-size-body-large: 20px;
+    --font-size-body-medium: 18px;
+    --font-size-body-small: 16px;
+
+    /* Line Heights */
+    --line-height-hero-h1: 70.4px;
+    --line-height-h2: 61.6px;
+    --line-height-h3: 44px;
+    --line-height-h4: 26.4px;
+    --line-height-body-large: 26px;
+    --line-height-body-medium: 23.4px;
+    --line-height-body-small: 20.8px;
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-xxl: 64px;
+    --spacing-xxxl: 96px;
+    --spacing-xxxxl: 128px;
+
+    /* Border Radius */
+    --border-radius-sm: 8px;
+    --border-radius-md: 14px;
+    --border-radius-lg: 45px;
+
+    /* Max Width */
+    --max-width-content: 1240px;
+
+    /* Z-index */
+    --z-index-header: 100;
+    --z-index-modal: 200;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    :root {
+        --font-size-hero-h1: 48px;
+        --line-height-hero-h1: 52.8px;
+        --font-size-h2: 40px;
+        --line-height-h2: 44px;
+        --font-size-h3: 32px;
+        --line-height-h3: 35.2px;
+        --font-size-h4: 22px;
+        --line-height-h4: 24.2px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-hero-h1: 36px;
+        --line-height-hero-h1: 39.6px;
+        --font-size-h2: 32px;
+        --line-height-h2: 35.2px;
+        --font-size-h3: 28px;
+        --line-height-h3: 30.8px;
+        --font-size-h4: 20px;
+        --line-height-h4: 22px;
+        --font-size-body-large: 18px;
+        --line-height-body-large: 23.4px;
+        --font-size-body-medium: 16px;
+        --line-height-body-medium: 20.8px;
+    }
+}

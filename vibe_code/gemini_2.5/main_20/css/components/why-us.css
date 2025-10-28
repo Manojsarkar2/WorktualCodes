@@ -1,0 +1,114 @@
+.why-us-section {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    padding: var(--spacing-xxxl) 0;
+    border-radius: var(--border-radius-md);
+    margin: var(--spacing-xxl) auto;
+    max-width: var(--max-width-content);
+}
+
+.why-us-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xxl);
+    padding: 0 var(--spacing-md);
+}
+
+.why-us-illustration {
+    flex: 1;
+}
+
+.why-us-illustration img {
+    width: 100%;
+    height: auto;
+}
+
+.why-us-text-content {
+    flex: 1;
+}
+
+.why-us-text-content h2 {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+}
+
+.why-us-text-content p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+}
+
+.why-us-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-xl);
+}
+
+.why-us-list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.why-us-list-item h4 {
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.why-us-list-item p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-body-small);
+    line-height: var(--line-height-body-small);
+    margin: 0;
+}
+
+.why-us-list-item .icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .why-us-section {
+        margin: var(--spacing-xl) auto;
+        padding: var(--spacing-xxl) 0;
+    }
+    .why-us-content {
+        gap: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .why-us-section {
+        border-radius: var(--border-radius-sm);
+        padding: var(--spacing-xl) 0;
+    }
+    .why-us-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .why-us-illustration {
+        order: -1; /* Move image to top */
+        margin-bottom: var(--spacing-lg);
+    }
+    .why-us-text-content h2,
+    .why-us-text-content p {
+        text-align: center;
+    }
+    .why-us-list {
+        margin-top: var(--spacing-lg);
+        text-align: left;
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .why-us-list-item {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .why-us-list-item h4 {
+        margin-bottom: var(--spacing-xs);
+    }
+}

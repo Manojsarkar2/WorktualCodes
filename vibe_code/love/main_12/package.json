@@ -1,0 +1,20 @@
+{
+  "name": "youtube-clone",
+  "version": "1.0.0",
+  "description": "A vanilla JavaScript YouTube-like application.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --config=live-server.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vanilla-js",
+    "spa",
+    "youtube-clone"
+  ],
+  "author": "CodeGenerator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.port": 8000,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.file": "index.html",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.NoBrowser": false
+}

@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "name": "Modern Smartphone Pro",
+        "category": "electronics",
+        "price": 699.99,
+        "rating": 4.7,
+        "imageUrl": "/images/smartphone.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Ultra-Thin Laptop",
+        "category": "electronics",
+        "price": 1299.00,
+        "rating": 4.8,
+        "imageUrl": "/images/laptop.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Wireless Noise-Cancelling Headphones",
+        "category": "electronics",
+        "price": 249.50,
+        "rating": 4.9,
+        "imageUrl": "/images/headphones.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Classic Cotton T-Shirt",
+        "category": "fashion",
+        "price": 25.00,
+        "rating": 4.5,
+        "imageUrl": "/images/tshirt.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Slim-Fit Denim Jeans",
+        "category": "fashion",
+        "price": 79.99,
+        "rating": 4.6,
+        "imageUrl": "/images/jeans.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Leather Ankle Boots",
+        "category": "fashion",
+        "price": 120.00,
+        "rating": 4.7,
+        "imageUrl": "/images/boots.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Smartwatch Series 8",
+        "category": "electronics",
+        "price": 399.00,
+        "rating": 4.8,
+        "imageUrl": "/images/smartwatch.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Organic Green Tea",
+        "category": "groceries",
+        "price": 12.99,
+        "rating": 4.9,
+        "imageUrl": "/images/tea.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Gourmet Coffee Beans",
+        "category": "groceries",
+        "price": 18.50,
+        "rating": 4.8,
+        "imageUrl": "/images/coffee.jpg"
+    },
+    {
+        "id": 10,
+        "name": "4K Ultra HD Smart TV",
+        "category": "electronics",
+        "price": 899.99,
+        "rating": 4.7,
+        "imageUrl": "/images/tv.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Stylish Sunglasses",
+        "category": "fashion",
+        "price": 55.00,
+        "rating": 4.6,
+        "imageUrl": "/images/sunglasses.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Portable Bluetooth Speaker",
+        "category": "electronics",
+        "price": 89.95,
+        "rating": 4.7,
+        "imageUrl": "/images/speaker.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Comfortable Running Shoes",
+        "category": "fashion",
+        "price": 95.00,
+        "rating": 4.8,
+        "imageUrl": "/images/shoes.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Extra Virgin Olive Oil",
+        "category": "groceries",
+        "price": 22.00,
+        "rating": 4.9,
+        "imageUrl": "/images/oil.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Digital Camera with Lens Kit",
+        "category": "electronics",
+        "price": 750.00,
+        "rating": 4.6,
+        "imageUrl": "/images/camera.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Quinoa Grain 1kg",
+        "category": "groceries",
+        "price": 15.75,
+        "rating": 4.8,
+        "imageUrl": "/images/quinoa.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Winter Wool Coat",
+        "category": "fashion",
+        "price": 199.99,
+        "rating": 4.7,
+        "imageUrl": "/images/coat.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Gaming Mouse Pro",
+        "category": "electronics",
+        "price": 65.00,
+        "rating": 4.9,
+        "imageUrl": "/images/mouse.jpg"
+    }
+]

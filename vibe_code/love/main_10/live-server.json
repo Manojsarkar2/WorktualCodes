@@ -1,12 +1,17 @@
 {
-    "port": 5500,
-    "host": "127.0.0.1",
-    "root": "/",
-    "file": "index.html",
-    "mount": [],
-    "server": [],
-    "middleware": [],
-    "no-css-inject": false,
-    "https": false,
-    "cors": true
+  "port": 8080, 
+  "host": "0.0.0.0", 
+  "open": "/", 
+  "file": "index.html", 
+  "wait": 1000, 
+  "mount": [
+    ["/components", "./components"],
+    ["/views", "./views"],
+    ["/data", "./data"],
+    ["/utils", "./utils"]
+  ],
+  "log-level": 2,
+  "middleware": [
+    "function(req, res, next) { next(); }"
+  ]
 }

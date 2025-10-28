@@ -1,0 +1,21 @@
+{
+  "name": "flipkart-spa",
+  "version": "1.0.0",
+  "description": "A modern, production-ready, single-folder SPA for Flipkart using only vanilla JavaScript, HTML, and CSS.",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx http-server . -p 3000",
+    "serve": "npx http-server . -p 3000"
+  },
+  "keywords": [
+    "vanilla-js",
+    "spa",
+    "flipkart",
+    "frontend"
+  ],
+  "author": "CodeGenerator",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

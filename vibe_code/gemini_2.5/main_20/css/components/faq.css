@@ -1,0 +1,108 @@
+.faq-section {
+    padding: var(--spacing-xxxl) 0;
+}
+
+.faq-content {
+    display: flex;
+    gap: var(--spacing-xxl);
+}
+
+.faq-text-content {
+    flex: 1;
+}
+
+.faq-text-content h2 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.faq-text-content p {
+    color: var(--color-text-grey);
+    margin-bottom: var(--spacing-xl);
+}
+
+.faq-text-content .button {
+    margin-top: var(--spacing-xl);
+}
+
+.accordion-container {
+    flex: 1;
+}
+
+.accordion-item {
+    background-color: var(--color-secondary-grey);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: var(--font-size-body-large);
+    color: var(--color-text-dark);
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--color-secondary-lightgrey);
+}
+
+.accordion-header .icon {
+    width: 24px;
+    height: 24px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.open .accordion-header .icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 var(--spacing-xl);
+}
+
+.accordion-item.open .accordion-content {
+    max-height: 200px; /* Max-height for smooth transition, adjust if content can be taller */
+    padding-bottom: var(--spacing-lg);
+}
+
+.accordion-content p {
+    font-size: var(--font-size-body-small);
+    line-height: var(--line-height-body-small);
+    color: var(--color-text-grey);
+}
+
+@media (max-width: 1024px) {
+    .faq-content {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+    .faq-text-content {
+        text-align: center;
+    }
+    .faq-text-content h2,
+    .faq-text-content p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: var(--spacing-xl) 0;
+    }
+    .accordion-header {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-body-medium);
+    }
+    .accordion-item.open .accordion-content {
+        padding-bottom: var(--spacing-md);
+    }
+}

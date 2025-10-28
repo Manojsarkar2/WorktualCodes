@@ -1,0 +1,24 @@
+{
+  "name": "clash-of-clans-spa",
+  "version": "1.0.0",
+  "description": "A modern, production-ready, single-folder SPA for Clash of Clans using vanilla JavaScript, HTML, and CSS.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --config=live-server.json",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "spa",
+    "vanilla-js",
+    "html",
+    "css",
+    "clash-of-clans",
+    "game-website",
+    "responsive"
+  ],
+  "author": "CodeGenerator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "port": 8080,
+  "host": "0.0.0.0",
+  "open": false,
+  "file": "index.html",
+  "wait": 1000,
+  "logLevel": 2,
+  "middleware": [
+    {
+      "route": "/*",
+      "handle": function (req, res, next) {
+        if (!req.url.match(/(\.\w+$)|__/)) { // If it's not a file request
+          req.url = "/index.html";
+        }
+        next();
+      }
+    }
+  ]
+}

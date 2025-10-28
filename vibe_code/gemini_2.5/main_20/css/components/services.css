@@ -1,0 +1,131 @@
+.services-section {
+    padding: var(--spacing-xxxl) 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xxl);
+}
+
+.service-card {
+    background-color: var(--color-secondary-grey);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.service-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.service-card-header h4 {
+    margin: 0;
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.service-card-header .icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-primary-dark);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: var(--spacing-md);
+}
+
+.service-card-header .icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.service-card p {
+    color: var(--color-text-grey);
+    margin-bottom: var(--spacing-lg);
+    flex-grow: 1;
+}
+
+.service-card .arrow-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 500;
+    font-size: var(--font-size-body-small);
+    margin-top: var(--spacing-md);
+}
+
+.service-card .arrow-link:hover {
+    color: var(--color-primary-green);
+}
+
+.service-card .arrow-link img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.service-card .arrow-link:hover img {
+    transform: translateX(4px);
+}
+
+.service-card.green-bg {
+    background-color: var(--color-primary-green);
+}
+
+.service-card.green-bg .service-card-header .icon {
+    background-color: var(--color-text-light);
+}
+
+.service-card.green-bg h4,
+.service-card.green-bg p,
+.service-card.green-bg .arrow-link {
+    color: var(--color-primary-dark);
+}
+
+.service-card.green-bg .arrow-link img {
+    filter: invert(1);
+}
+
+/* Line decoration for services section */
+.services-decoration-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary-dark);
+    margin-top: var(--spacing-xxl);
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-xl);
+    }
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+    .service-card-header .icon {
+        width: 56px;
+        height: 56px;
+    }
+    .service-card-header .icon img {
+        width: 28px;
+        height: 28px;
+    }
+    .services-decoration-line {
+        margin-top: var(--spacing-xl);
+    }
+}

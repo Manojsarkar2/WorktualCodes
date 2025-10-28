@@ -1,0 +1,24 @@
+{
+  "name": "online-medical-store",
+  "version": "1.0.0",
+  "description": "Frontend for an Online Medical Store based on Figma design.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "medical",
+    "store",
+    "frontend",
+    "html",
+    "css",
+    "javascript",
+    "responsive"
+  ],
+  "author": "AI Frontend Generator",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

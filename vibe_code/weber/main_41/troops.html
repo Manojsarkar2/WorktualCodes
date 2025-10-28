@@ -1,0 +1,40 @@
+<section class="container">
+    <h1>Clash of Clans Troops</h1>
+    <p>Unleash a diverse army of warriors, from the humble Barbarian to the mighty Dragon! Each troop has unique strengths and weaknesses, requiring strategic deployment to achieve victory.</p>
+
+    <div class="search-filter-container">
+        <input type="text" id="troop-search" placeholder="Search troops..." aria-label="Search troops by name">
+        <select id="troop-category-filter" aria-label="Filter troops by category">
+            <option value="all">All Categories</option>
+            <option value="elixir">Elixir Troops</option>
+            <option value="dark elixir">Dark Elixir Troops</option>
+            <option value="siege machine">Siege Machines</option>
+        </select>
+    </div>
+
+    <div class="tabs-container">
+        <div class="tab-buttons" role="tablist">
+            <button class="tab-button" data-tab="elixir-troops-tab" role="tab" aria-selected="true" aria-controls="elixir-troops-tab">Elixir Troops</button>
+            <button class="tab-button" data-tab="dark-elixir-troops-tab" role="tab" aria-selected="false" aria-controls="dark-elixir-troops-tab">Dark Elixir Troops</button>
+            <button class="tab-button" data-tab="siege-machines-tab" role="tab" aria-selected="false" aria-controls="siege-machines-tab">Siege Machines</button>
+        </div>
+
+        <div id="elixir-troops-tab" class="tab-content" role="tabpanel" tabindex="0">
+            <h2>Elixir Troops</h2>
+            <p>These troops are trained using Elixir and form the backbone of most armies.</p>
+            <div id="troop-grid" class="product-grid"></div>
+        </div>
+
+        <div id="dark-elixir-troops-tab" class="tab-content" role="tabpanel" tabindex="0">
+            <h2>Dark Elixir Troops</h2>
+            <p>More powerful and specialized troops, trained using the rare Dark Elixir.</p>
+            <div class="product-grid"></div>
+        </div>
+
+        <div id="siege-machines-tab" class="tab-content" role="tabpanel" tabindex="0">
+            <h2>Siege Machines</h2>
+            <p>Powerful war machines that assist your army in breaching defenses and reaching the Town Hall.</p>
+            <div class="product-grid"></div>
+        </div>
+    </div>
+</section>

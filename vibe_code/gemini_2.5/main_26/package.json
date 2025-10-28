@@ -1,0 +1,21 @@
+{
+  "name": "funiro-ecommerce",
+  "version": "1.0.0",
+  "description": "A modern furniture e-commerce landing page based on Figma design.",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=3000 --browser=firefox --open=index.html --host=0.0.0.0"
+  },
+  "keywords": [
+    "ecommerce",
+    "furniture",
+    "landing-page",
+    "frontend",
+    "figma"
+  ],
+  "author": "AI Frontend Generator",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

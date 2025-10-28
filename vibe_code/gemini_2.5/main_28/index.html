@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAAS Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo.svg" alt="SAAS Logo" class="logo">
+                <span class="logo-text">SAAS</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active"><a href="#"><i class="fas fa-th-large"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-chart-line"></i><span>Analytics</span></a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-file-alt"></i><span>Reports</span></a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-calendar-alt"></i><span>Schedule</span></a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-comments"></i><span>Chat</span><span class="badge">3</span></a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+                </ul>
+            </nav>
+            <div class="upgrade-pro">
+                <img src="images/pro-icon.svg" alt="Pro Icon">
+                <h3>Upgrade to PRO</h3>
+                <p>Unlock all features and get more insights.</p>
+                <button class="btn-primary">Upgrade Now</button>
+            </div>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="images/avatar.png" alt="User Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Olivia Rhye</span>
+                        <span class="user-email">olivia@untitledui.com</span>
+                    </div>
+                    <i class="fas fa-sign-out-alt logout-icon"></i>
+                </div>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="btn-secondary create-btn"><i class="fas fa-plus"></i>Create</button>
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <img src="images/avatar.png" alt="User Avatar" class="user-avatar">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <main class="dashboard-body">
+                <div class="welcome-section">
+                    <h1>Welcome, Olivia!</h1>
+                    <p>Track, manage and forecast your financial activities.</p>
+                </div>
+
+                <section class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="card-header">
+                            <h4>Total Revenue</h4>
+                            <span class="period">Last 30 days</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="value">$45,230</div>
+                            <div class="change positive"><i class="fas fa-arrow-up"></i>2.6%</div>
+                        </div>
+                        <div class="card-chart">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="card-header">
+                            <h4>New Users</h4>
+                            <span class="period">Last 30 days</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="value">1,560</div>
+                            <div class="change positive"><i class="fas fa-arrow-up"></i>6.1%</div>
+                        </div>
+                        <div class="card-chart">
+                            <canvas id="usersChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="card-header">
+                            <h4>Sales</h4>
+                            <span class="period">Last 30 days</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="value">$24,120</div>
+                            <div class="change negative"><i class="fas fa-arrow-down"></i>0.3%</div>
+                        </div>
+                        <div class="card-chart">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="metric-card performance-card">
+                        <div class="card-header">
+                            <h4>Performance</h4>
+                            <div class="dropdown">
+                                <button class="dropdown-btn">Yearly <i class="fas fa-chevron-down"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Weekly</a>
+                                    <a href="#">Monthly</a>
+                                    <a href="#">Yearly</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-widgets">
+                    <div class="widget large">
+                        <div class="widget-header">
+                            <h3>Recent Transactions</h3>
+                            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="widget-body">
+                            <table class="transactions-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sender</th>
+                                        <th>Category</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="transaction-user"><img src="images/netflix.png" alt="Netflix" class="user-avatar"><span>Netflix</span></div></td>
+                                        <td>Entertainment</td>
+                                        <td>-$15.00</td>
+                                        <td><span class="status-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="transaction-user"><img src="images/stripe.png" alt="Stripe" class="user-avatar"><span>Stripe</span></div></td>
+                                        <td>Salary</td>
+                                        <td>+$2,000.00</td>
+                                        <td><span class="status-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="transaction-user"><img src="images/figma.png" alt="Figma" class="user-avatar"><span>Figma</span></div></td>
+                                        <td>Design Tools</td>
+                                        <td>-$20.00</td>
+                                        <td><span class="status-pending">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="transaction-user"><img src="images/google-ads.png" alt="Google Ads" class="user-avatar"><span>Google Ads</span></div></td>
+                                        <td>Marketing</td>
+                                        <td>-$120.00</td>
+                                        <td><span class="status-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="transaction-user"><img src="images/upwork.png" alt="Upwork" class="user-avatar"><span>Upwork</span></div></td>
+                                        <td>Freelance</td>
+                                        <td>+$500.00</td>
+                                        <td><span class="status-success">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="widget medium">
+                        <div class="widget-header">
+                            <h3>Top Products</h3>
+                            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="widget-body">
+                            <ul class="product-list">
+                                <li>
+                                    <div class="product-info">
+                                        <img src="images/product1.png" alt="SAAS Product Name 1">
+                                        <span>SAAS Product Name 1</span>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar-container">
+                                            <div class="progress-bar" style="width: 80%;"></div>
+                                        </div>
+                                        <span class="sales-value">$12,000</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-info">
+                                        <img src="images/product2.png" alt="SAAS Product Name 2">
+                                        <span>SAAS Product Name 2</span>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar-container">
+                                            <div class="progress-bar" style="width: 65%;"></div>
+                                        </div>
+                                        <span class="sales-value">$9,500</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-info">
+                                        <img src="images/product3.png" alt="SAAS Product Name 3">
+                                        <span>SAAS Product Name 3</span>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar-container">
+                                            <div class="progress-bar" style="width: 50%;"></div>
+                                        </div>
+                                        <span class="sales-value">$7,000</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="product-info">
+                                        <img src="images/product4.png" alt="SAAS Product Name 4">
+                                        <span>SAAS Product Name 4</span>
+                                    </div>
+                                    <div class="product-sales">
+                                        <div class="progress-bar-container">
+                                            <div class="progress-bar" style="width: 35%;"></div>
+                                        </div>
+                                        <span class="sales-value">$5,000</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="widget small">
+                        <div class="widget-header">
+                            <h3>Customer Satisfaction</h3>
+                            <div class="dropdown">
+                                <button class="dropdown-btn">Weekly <i class="fas fa-chevron-down"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Weekly</a>
+                                    <a href="#">Monthly</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-body">
+                            <canvas id="satisfactionChart"></canvas>
+                            <div class="satisfaction-legend">
+                                <div><span class="legend-color high"></span> High</div>
+                                <div><span class="legend-color medium"></span> Medium</div>
+                                <div><span class="legend-color low"></span> Low</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget medium activity-overview-widget">
+                        <div class="widget-header">
+                            <h3>Activity Overview</h3>
+                            <div class="dropdown">
+                                <button class="dropdown-btn">Last 6 months <i class="fas fa-chevron-down"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Last month</a>
+                                    <a href="#">Last 3 months</a>
+                                    <a href="#">Last 6 months</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-body">
+                            <canvas id="activityChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="widget small schedule-widget">
+                        <div class="widget-header">
+                            <h3>Upcoming Schedule</h3>
+                            <button class="btn-icon"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="widget-body">
+                            <ul class="schedule-list">
+                                <li>
+                                    <div class="schedule-time">10:00 AM</div>
+                                    <div class="schedule-details">
+                                        <h4>Meeting with Design Team</h4>
+                                        <span>Project planning</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="schedule-time">02:30 PM</div>
+                                    <div class="schedule-details">
+                                        <h4>Client Presentation</h4>
+                                        <span>New Feature Demo</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="schedule-time">04:00 PM</div>
+                                    <div class="schedule-details">
+                                        <h4>Team Standup</h4>
+                                        <span>Daily updates</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

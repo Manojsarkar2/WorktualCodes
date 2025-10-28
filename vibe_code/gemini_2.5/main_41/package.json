@@ -1,0 +1,23 @@
+{
+  "name": "fantasy-bookstore-spa",
+  "version": "1.0.0",
+  "description": "A modern, production-ready single-page application for a fantasy bookstore, built with vanilla JavaScript, HTML, and CSS.",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx http-server . -p 3000",
+    "serve": "npx http-server . -p 3000"
+  },
+  "keywords": [
+    "spa",
+    "vanilla-js",
+    "fantasy",
+    "bookstore",
+    "html",
+    "css"
+  ],
+  "author": "CodeGenerator",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

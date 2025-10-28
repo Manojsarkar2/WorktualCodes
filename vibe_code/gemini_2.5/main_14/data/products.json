@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Sunset Rose Bouquet",
+    "price": 45.99,
+    "description": "A stunning arrangement of vibrant orange and pink roses, perfect for expressing warmth and affection.",
+    "category": "bouquets"
+  },
+  {
+    "id": 2,
+    "name": "Classic Lily Vase",
+    "price": 55.00,
+    "description": "Elegant white lilies in a clear glass vase. A timeless classic for any occasion.",
+    "category": "arrangements"
+  },
+  {
+    "id": 3,
+    "name": "Orchid Serenity Plant",
+    "price": 65.50,
+    "description": "A beautiful and long-lasting Phalaenopsis orchid plant in a ceramic pot.",
+    "category": "plants"
+  },
+  {
+    "id": 4,
+    "name": "Wildflower Meadow Mix",
+    "price": 39.99,
+    "description": "A rustic and charming mix of seasonal wildflowers, capturing the beauty of a meadow.",
+    "category": "bouquets"
+  },
+  {
+    "id": 5,
+    "name": "Peony Dream",
+    "price": 75.00,
+    "description": "Lush, fragrant peonies in shades of pink and white. A seasonal favorite.",
+    "category": "bouquets"
+  },
+  {
+    "id": 6,
+    "name": "Succulent Garden",
+    "price": 42.00,
+    "description": "An easy-to-care-for arrangement of assorted succulents in a modern geometric planter.",
+    "category": "plants"
+  },
+  {
+    "id": 7,
+    "name": "Tulip Sunshine",
+    "price": 48.00,
+    "description": "A cheerful bunch of bright yellow tulips that bring a touch of spring indoors.",
+    "category": "bouquets"
+  },
+  {
+    "id": 8,
+    "name": "Luxury Dozen Red Roses",
+    "price": 89.99,
+    "description": "The ultimate romantic gesture. A dozen premium, long-stemmed red roses beautifully arranged.",
+    "category": "arrangements"
+  }
+]

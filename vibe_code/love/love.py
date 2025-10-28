@@ -8,13 +8,13 @@ import uvicorn
 import asyncio
 from playwright.async_api import async_playwright
 import colorgram
-
+import re
 
 
 
 genai.configure(api_key="AIzaSyDxisQsGZW_T5xwMstrowF0-p7yX7H_LEQ")
 
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 app = FastAPI(title="AI Project Generator", version="1.0")
 
@@ -213,7 +213,7 @@ Deliverable:
         raise HTTPException(status_code=400, detail="Invalid JSON format")
 
     try:
-        create_project_from_json(result, base_dir="main_9")
+        create_project_from_json(result, base_dir="main_11")
         return {
             "status": "✅ Project generated successfully",
             "project_structure": result.get("PROJECT_STRUCTURE", {})
@@ -244,22 +244,21 @@ async def generate_project(request: UserRequest = Body(...)):
         You are a code generator.
         Generate ONLY valid JSON. Do not add any explanations, no markdown, no extra text.
 
-        Important NOte (Generate ONLY valid JSON to convert into dict)
+        Important Note (Generate ONLY valid JSON to convert into dict)
 
-        If the user provides any referral website name or website link, extract the template detail of that webpage and create a website template based on the website from that information.
+        If the user provides any referral website name, extract the template detail of that webpage and create a website template based on the website from that information.
         
         user requirement : {request.requirement}
     Build a modern, production-ready, single-folder SPA using only vanilla JavaScript, HTML, and CSS. No frameworks or rendering libraries—use a single script.js for all interactivity.
 
 
     MOST IMPORTANT:
+        Important Note (Generate ONLY valid JSON to convert into dict - json.load())
         MAKE IT AS REAL WORLD APPLICATION AND PRODUCTION-READY AS POSSIBLE.
         KNOW THE FILE STRCTURE VERY WELL , DO NOT MAKE ANY RENDERING ISSUES MAKE IT SIMPLE AND CLEAR
         If the website have product in nav bar fetch them without failure
-        If user ask for chatbot or agentic ai create a interactive high intelligent chatbot website for user
-        If user does not give any color preference you have to take one color from color pattern according to the domain
-    
-    Requirements:
+        
+       
 
     1. File Structure
     - All files in one folder.
@@ -316,6 +315,9 @@ async def generate_project(request: UserRequest = Body(...)):
 
     If any chance there a product navbar element put the products in div tag also create cart in navbar and make them work like a real-world application checkout everything
 
+    Avoid Errors:
+    "Invalid \\escape:"
+
 
 
 
@@ -336,13 +338,15 @@ async def generate_project(request: UserRequest = Body(...)):
         if raw_output.startswith("```"):
             raw_output = raw_output.split("```json")[-1].split("```")[0].strip()
 
+
+        raw_output = raw_output.replace("\r", "").replace("\x00", "")
         try:
             result = json.loads(raw_output)
         except json.JSONDecodeError as e:
             return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
 
         
-        create_project_from_json(result, base_dir="main_10")
+        create_project_from_json(result, base_dir="main_14")
 
         return {"status": "✅ Project generated successfully", "project_structure": result["PROJECT_STRUCTURE"]}
 

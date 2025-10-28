@@ -1,0 +1,48 @@
+<section class="container">
+    <h1>Clash of Clans Buildings</h1>
+    <p>Your village is your fortress! Strategically place and upgrade various buildings to defend your resources, train your army, and advance your Town Hall level.</p>
+
+    <div class="search-filter-container">
+        <input type="text" id="building-search" placeholder="Search buildings..." aria-label="Search buildings by name">
+        <select id="building-category-filter" aria-label="Filter buildings by category">
+            <option value="all">All Categories</option>
+            <option value="resource">Resource</option>
+            <option value="defense">Defense</option>
+            <option value="army">Army</option>
+            <option value="trap">Traps</option>
+        </select>
+    </div>
+
+    <div class="tabs-container">
+        <div class="tab-buttons" role="tablist">
+            <button class="tab-button" data-tab="resource-buildings-tab" role="tab" aria-selected="true" aria-controls="resource-buildings-tab">Resource</button>
+            <button class="tab-button" data-tab="defense-buildings-tab" role="tab" aria-selected="false" aria-controls="defense-buildings-tab">Defense</button>
+            <button class="tab-button" data-tab="army-buildings-tab" role="tab" aria-selected="false" aria-controls="army-buildings-tab">Army</button>
+            <button class="tab-button" data-tab="trap-buildings-tab" role="tab" aria-selected="false" aria-controls="trap-buildings-tab">Traps</button>
+        </div>
+
+        <div id="resource-buildings-tab" class="tab-content" role="tabpanel" tabindex="0">
+            <h2>Resource Buildings</h2>
+            <p>These buildings are essential for generating and storing Gold, Elixir, and Dark Elixir.</p>
+            <div id="building-grid" class="product-grid"></div>
+        </div>
+
+        <div id="defense-buildings-tab" class="tab-content" role="tabpanel" tabindex="0">
+            <h2>Defensive Buildings</h2>
+            <p>Protect your village from enemy raids with a variety of powerful defensive structures.</p>
+            <div class="product-grid"></div>
+        </div>
+
+        <div id="army-buildings-tab" class="tab-content" role="tabpanel" tabindex="0">
+            <h2>Army Buildings</h2>
+            <p>Train, house, and upgrade your troops and spells to prepare for battle.</p>
+            <div class="product-grid"></div>
+        </div>
+
+        <div id="trap-buildings-tab" class="tab-content" role="tabpanel" tabindex="0">
+            <h2>Traps</h2>
+            <p>Hidden surprises that can turn the tide of battle against unsuspecting attackers.</p>
+            <div class="product-grid"></div>
+        </div>
+    </div>
+</section>

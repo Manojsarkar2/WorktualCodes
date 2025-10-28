@@ -1,21 +1,21 @@
-import google.generativeai as genai
+import colorgram
+import re
 import os
 import json
-from fastapi import FastAPI, Body , HTTPException
-from pydantic import BaseModel
 import logging
 import uvicorn
 import asyncio
 from playwright.async_api import async_playwright
-import colorgram
+from fastapi import FastAPI, Body , HTTPException
+from pydantic import BaseModel
+import google.generativeai as genai
 
 
-
-
-genai.configure(api_key="AIzaSyDxisQsGZW_T5xwMstrowF0-p7yX7H_LEQ")
+genai.configure(api_key="AIzaSyAxxUoVPdlW-5qbbYpNhEb48wVzDS3CfJM")
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
+file = 'main_41'
 
 app = FastAPI(title="AI Project Generator", version="1.0")
 
@@ -33,8 +33,170 @@ def create_project_from_json(data, base_dir="."):
         with open(full_path, "w", encoding="utf-8") as f:
             f.write(file_content)
 
+    return 
 
 
+async def figma(figma_link):
+
+#     prompt = f"""
+# You are a professional Figma design generator.
+# Your task is to create a structured Figma design blueprint from the user’s text requirement.
+
+# 🧩 Output Format (MUST be valid JSON only — no explanations, markdown, or text outside JSON):
+# {{
+#   "DESIGN_OVERVIEW": "A summary of the visual direction and design intent.",
+#   "COLOR_PALETTE": {{
+#     "primary": "#HEXCODE",
+#     "secondary": "#HEXCODE",
+#     "background": "#HEXCODE",
+#     "accent": "#HEXCODE"
+#   }},
+#   "TYPOGRAPHY": {{
+#     "heading_font": "Font Name",
+#     "body_font": "Font Name"
+#   }},
+#   "LAYOUT": {{
+#     "pages": [
+#       {{
+#         "name": "Home",
+#         "sections": [
+#           {{
+#             "name": "Hero Section",
+#             "elements": [
+#               {{"type": "heading", "content": "Text here"}},
+#               {{"type": "button", "label": "Get Started"}}
+#             ]
+#           }},
+#           {{
+#             "name": "Features Section",
+#             "elements": [
+#               {{"type": "card", "count": 3}},
+#               {{"type": "image", "placement": "left"}}
+#             ]
+#           }}
+#         ]
+#       }}
+#     ]
+#   }},
+#   "FIGMA_INSTRUCTIONS": "Describe how this layout should be built in Figma — frames, auto layout, alignment, spacing, and component usage."
+# }}
+
+# 🔹 Rules:
+# - Return ONLY valid JSON that can be parsed directly.
+# - Do NOT include markdown, code fences, or explanations.
+# - The structure must clearly describe how to create the design in Figma.
+# - Reflect ALL details mentioned by the user.
+
+# User Requirement: {figma_link}
+# """
+
+#     response = model.generate_content(
+#         prompt,
+#         generation_config={"max_output_tokens": 20000, "temperature": 0.4}
+#     )
+
+#     raw_output = response.text.strip()
+#     if raw_output.startswith("```"):
+#         raw_output = raw_output.split("```json")[-1].split("```")[0].strip()
+
+#     try:
+#         figma_json = json.loads(raw_output)
+#     except json.JSONDecodeError as e:
+#         raise HTTPException(status_code=500, detail=f"Invalid JSON output: {e}")
+
+
+    # frontend_content = f"""
+    # You are a professional frontend code generator. Generate ONLY valid JSON. Do not add any explanations, no markdown, no extra text. The JSON output will be parsed directly into a dictionary by the caller — it must be strictly valid JSON (double quotes, escaped characters where needed).
+
+    # HIGH-LEVEL GOAL:
+    # User provided a Figma JSON object in the variable `figma_json`. Produce a modern, production-ready, single-folder SPA that reproduces the Figma page exactly (visual fidelity and behavior), using only vanilla HTML, CSS, and ES modules (no frameworks, no bundlers). The project must be modular (components, views, utils), behave like a real-world application (routing, state/store, mock API, forms, accessible modals, search/pagination where applicable), and run without a build step (open index.html from a local dev server such as live-server or lite-server).
+
+    # INPUT:
+    # user input figma json : {figma_json}
+
+    # Website Behaviour:
+    #     - website should render easily without any issues
+    #     - Create a full functionality website using the figma 
+    #     - Everything should be functional like how real world application works
+    #     - Going to sub pages, buttons, link these kind of things should have to work like real world applicaation.
+    #     - Render the website without any failure
+
+    # VERY IMPORTANT ERROR I DO NOT WANT TO GET:
+    # - Rendering issues 
+    # - DO NOT MAKE ANY RENDERING ISSUES
+    # - Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "application/json". Strict MIME type checking is enforced for module scripts per HTML spec.(data/products.json:1 )
+    # - 404 Error
+
+    # Deliverable:  
+    #     Output format:
+    #     {{
+    #     "PROJECT_STRUCTURE": {{ "root": [ ... ] }},
+    #     "CODE": {{ "file_path": "file content" }}
+    #     }}
+    #     """
+
+    frontend_content = f"""
+    You are a professional frontend code generator. Generate ONLY valid JSON. Do not add any explanations, no markdown, no extra text. The JSON output will be parsed directly into a dictionary by the caller — it must be strictly valid JSON (double quotes, escaped characters where needed).
+
+    Important Goal:
+        generate a 100 perecent valid json that would be used as json.loads()
+        Build the website exactly like the figma
+        Structure, content, navbar everything should look like figma
+        Every components should work like a real world website
+    
+    File Structure
+    - All files in one folder.
+    - Required files: index.html, styles.css, script.js, package.json.
+    - Only one html file
+    - Include all config files needed to render the website correctly with local development server (e.g., live-server.json, .vscode/settings.json)
+    - Optional subfolders if required: views/, components/, images/, data/
+
+    INPUT:
+    user input figma_link : {figma_link}
+
+    Deliverable:  
+        Output format:
+        {{
+        "PROJECT_STRUCTURE": {{ "root": [ ... ] }},
+        "CODE": {{ "file_path": "file content" }}
+        }}
+        """
+
+    
+
+    response = model.generate_content(
+            frontend_content,
+
+        )
+ 
+    raw_output = response.text.strip()
+    if raw_output.startswith("```"):
+        raw_output = raw_output.split("```json")[-1].split("```")[0].strip()
+
+
+
+    print(f"raw_output----------> {raw_output}")
+
+    try:
+        result = json.loads(raw_output)
+    except json.JSONDecodeError as e:
+        return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
+
+        
+
+    try:
+        create_project_from_json(result, base_dir=file)
+        return {
+            "status": "✅ Project generated successfully",
+            "project_structure": result.get("PROJECT_STRUCTURE", {})
+        }
+    except Exception as e:
+        logging.error(f"Error creating project: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+    
+    
 
 async def get_link(value):
   
@@ -81,147 +243,153 @@ async def get_link(value):
 
     print(website_link)
 
-    async def capture(url):
+
+
+    async def capture_dom(url):
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=True)
             page = await browser.new_page()
-            await page.goto(url, timeout=60000)
-            await page.screenshot(path="screenshot.png", full_page=True)
+
+            print(f"Visiting: {url}")
+            await page.goto(url, timeout=60000, wait_until="networkidle")
+
+            dom_data = await page.evaluate(
+                """() => {
+                    function serialize(node) {
+                        if (node.nodeType === Node.TEXT_NODE) {
+                            const text = node.textContent.replace(/\\s+/g, ' ').trim();
+                            return text ? { tag: null, text } : null;
+                        }
+                        if (node.nodeType !== Node.ELEMENT_NODE) return null;
+
+                        // Skip unwanted tags
+                        if (['script', 'style', 'meta', 'link', 'noscript'].includes(node.tagName.toLowerCase())) return null;
+
+                        const obj = {
+                            tag: node.tagName.toLowerCase(),
+                            text: null,
+                            attributes: {},
+                            children: []
+                        };
+
+                        // Capture attributes
+                        for (const attr of node.attributes) {
+                            obj.attributes[attr.name] = attr.value;
+                        }
+
+                        // Capture single text node
+                        if (node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE) {
+                            const text = node.childNodes[0].textContent.replace(/\\s+/g, ' ').trim();
+                            if (text) obj.text = text;
+                            return obj;
+                        }
+
+                        // Recursively serialize children
+                        for (const child of node.childNodes) {
+                            const c = serialize(child);
+                            if (c) obj.children.push(c);
+                        }
+
+                        return obj;
+                    }
+
+                    return serialize(document.documentElement || document.body);
+                }"""
+            )
+
+            # Save essential DOM snapshot
+            with open("dom_snapshot.json", "w", encoding="utf-8") as f:
+                json.dump(dom_data, f, indent=2, ensure_ascii=False)
+
             await browser.close()
-    
-    await (capture(website_link))
-   
-    screenshot = 'screenshot.png'
+            print("✅ Essential DOM structure captured successfully.")
+            return dom_data
 
-    # --- new improved prompt ---
+
+ 
+
+    def limit_dom(node, max_depth=3, max_children=5, depth=0):
+        # If it's a text-only node (tag is None)
+        if node.get("tag") is None:
+            return {"tag": None, "text": node.get("text")}
+
+        # Skip unwanted tags
+        if node["tag"] in ["script", "style", "meta", "link"]:
+            return None
+
+        # Stop at max depth
+        if depth >= max_depth:
+            return {"tag": node["tag"], "text": node.get("text")}
+
+        # Limit children
+        children = []
+        for child in node.get("children", [])[:max_children]:
+            limited_child = limit_dom(child, max_depth, max_children, depth + 1)
+            if limited_child:
+                children.append(limited_child)
+
+        result = {"tag": node["tag"], "text": node.get("text")}
+        if children:
+            result["children"] = children
+
+        return result
+
+        
+    dom_data = await capture_dom(website_link)
+
+    limited_dom = limit_dom(dom_data, max_depth=2, max_children=2)
+
+    dom_json_str = json.dumps(limited_dom, indent=2, ensure_ascii=False)
+
     frontend_content_palette = f"""
-    You are a code generator AI.
-    Your job is to analyze the given base64-encoded website screenshot and generate a **complete, production-ready Single Page Application (SPA)** that visually and functionally replicates that screenshot as closely as possible.
+        You are a code generator AI.
+        Your job is to analyze the given **DOM structure of a website homepage** and generate a **complete, production-ready Single Page Application (SPA)** that visually and functionally replicates it as closely as possible.
 
-    The output must be **ONLY valid JSON** (convertible directly to a Python dict).
-    Do not include explanations, markdown, or extra text.
+        The output must be **ONLY valid JSON** (convertible directly to a Python dict).
+        Do not include explanations, markdown, or extra text.
+        A normal website not react
 
-    Screenshot :
-    {screenshot}
+        DOM structure:
+        {dom_json_str}
 
+        create a {website_link} website with the strcture of given dom json
 
-    ===============================
-    🔧 INSTRUCTIONS
-    ===============================
-
-    1. **Analyze the Screenshot**
-       - Visually extract the website’s layout, UI structure, color palette, font style, and overall theme.
-       - Detect page type (e.g., landing page, portfolio, store, company website, AI chatbot, blog, etc.).
-       - Understand real-world design context (buttons, forms, cards, navbar, hero section, footer, etc.).
-       - Generate realistic, professional, and domain-accurate content and text.
-
-    2. **Goal**
-       Build a modern, real-time, responsive single-folder SPA that matches the screenshot’s layout, design, and theme as accurately as possible — while being production-ready and interactive using only:
-       - HTML (index.html)
-       - CSS (styles.css)
-       - JavaScript (script.js)
-       - package.json for local development
-       No frameworks or libraries are allowed.
-
-    3. **Core Requirements**
-       - Fully functional navigation (client-side routing with JS, no reloads)
-       - Responsive layout (desktop, tablet, mobile)
-       - Semantic and accessible HTML
-       - Smooth transitions and animations
-       - Realistic, professional text content (not placeholders)
-       - Maintain exact alignment, spacing, and color consistency with the screenshot
-       - Accurately reconstruct navbar, buttons, cards, modals, etc.
-       - Use localStorage for session/form data if login or cart elements exist
-
-    4. **Functionality**
-       - If screenshot shows login/signup → build working auth mock pages.
-       - If it’s a product website → include product grid, cart, checkout, etc.
-       - If it’s a chatbot → make it interactive with local JS logic (no API).
-       - If it’s a business or portfolio → make all sections scrollable and responsive with working contact form.
-       - If it’s a dashboard → include sidebar, stats, and real-time UI components (mock data allowed).
-
-    5. **Style System**
-       - Deduce colors, font, and layout directly from the screenshot.
-       - Use CSS Flexbox/Grid for structure.
-       - Apply hover, focus, and active states where logical.
-       - Keep design pixel-perfect and consistent.
-
-       
-    ===============================
-    💡 Additional Rules
-    ===============================
-    - Color and content pattern must be same as the screenshot website
-    - Never add markdown, backticks, or comments outside of JSON.
-    - Never output image URLs; instead, use placeholders or divs.
-    - Must be fully runnable locally with `live-server` or similar.
-    - Ensure smooth, responsive, and realistic user experience.
-    - Use actual text and structure that fits the screenshot’s design.
-  
-
-    ===============================
-    🎯 Goal Recap
-    ===============================
-    From the given screenshot, generate a professional, real-world, domain-accurate, responsive, interactive SPA that visually replicates the design and layout **exactly**.
-
-  Deliverable:  
-        Output format:
+        Deliverable:  
         {{
-        "PROJECT_STRUCTURE": {{ "root": [ ... ] }},
-        "CODE": {{ "file_path": "file content" }}
+            "PROJECT_STRUCTURE": {{ "root": [ ... ] }},
+            "CODE": {{ "file_path": "file content" }}
         }}
         """
 
-    
-
     response = model.generate_content(
-        frontend_content_palette,
-        generation_config={"max_output_tokens": 30000, "temperature": 0.3}
-    )
-
+            frontend_content_palette,
+            generation_config={"max_output_tokens": 30000, "temperature": 0.3}
+        )
 
     raw_output = response.text.strip()
     if raw_output.startswith("```"):
         raw_output = raw_output.split("```json")[-1].split("```")[0].strip()
-    
+
     print(raw_output)
 
     try:
         result = json.loads(raw_output)
-        logging.info("✅ JSON successfully parsed.")
     except json.JSONDecodeError as e:
-        logging.error(f"JSON Decode Error: {e}")
-        raise HTTPException(status_code=400, detail="Invalid JSON format")
-    
-    print(result)
+        return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
+
     try:
-        create_project_from_json(result, base_dir="main_9")
+        create_project_from_json(result, base_dir=file)
         return {
-            "status": "✅ Project generated successfully",
-            "project_structure": result.get("PROJECT_STRUCTURE", {})
-        }
+                "status": "✅ Project generated successfully",
+                "project_structure": result.get("PROJECT_STRUCTURE", {})
+            }
     except Exception as e:
         logging.error(f"Error creating project: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
-
-
-
-
-
-
-
-@app.post("/generate_project")
-async def generate_project(request: UserRequest = Body(...)):
-    value = request.requirement
-    
-    if 'https' in value:
-       print('*'*50)
-       await get_link(value)
-   
-    else:
-
-        frontend_content = f"""
+async def sentence_prompt(user_query):
+    frontend_content = f"""
         You are a code generator.
         Generate ONLY valid JSON. Do not add any explanations, no markdown, no extra text.
 
@@ -229,7 +397,7 @@ async def generate_project(request: UserRequest = Body(...)):
 
         If the user provides any referral website name or website link, extract the template detail of that webpage and create a website template based on the website from that information.
         
-        user requirement : {request.requirement}
+        user requirement : {user_query}
     Build a modern, production-ready, single-folder SPA using only vanilla JavaScript, HTML, and CSS. No frameworks or rendering libraries—use a single script.js for all interactivity.
 
 
@@ -309,25 +477,55 @@ async def generate_project(request: UserRequest = Body(...)):
         }}
         """
 
-        response = model.generate_content(
+    response = model.generate_content(
             frontend_content,
-            generation_config={"max_output_tokens": 30000, "temperature": 0.3}
+
         )
 
-        raw_output = response.text.strip()
-        if raw_output.startswith("```"):
-            raw_output = raw_output.split("```json")[-1].split("```")[0].strip()
+    raw_output = response.text.strip()
+    if raw_output.startswith("```"):
+        raw_output = raw_output.split("```json")[-1].split("```")[0].strip()
 
-        try:
-            result = json.loads(raw_output)
-        except json.JSONDecodeError as e:
-            return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
+    # raw_output = raw_output.replace("\r", "").replace("\x00", "")
+    print('-'*100,end='\n\n')
+    print(raw_output,end='\n\n')
+    print('-'*100,end='\n\n')
+    
 
+    try:
+        result = json.loads(raw_output)
+    except json.JSONDecodeError as e:
+        return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
+
+
+
+    try:
+        create_project_from_json(result, base_dir=file)
+        return {
+            "status": "✅ Project generated successfully",
+            "project_structure": result.get("PROJECT_STRUCTURE", {})
+        }
+    except Exception as e:
+        logging.error(f"Error creating project: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/generate_project")
+async def generate_project(request: UserRequest = Body(...)):
+    value = request.requirement
+    
+    if 'www.figma.com' in value:
+       print("Figma_Link")
+       result = await figma(value)
+    elif 'https' in value:
+        print("Website_Link")
+        result = await get_link(value)
+    else:
+        print("Normal_Query")
+        result = await sentence_prompt(value)
+
+    return result
         
-        create_project_from_json(result, base_dir="main_8")
-
-        return {"status": "✅ Project generated successfully", "project_structure": result["PROJECT_STRUCTURE"]}
-
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

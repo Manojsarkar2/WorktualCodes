@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furni. - Modern Interior Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">Furni.</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn"><i class="fas fa-search"></i></button>
+                <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-btn"><i class="fas fa-user"></i></button>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <p class="hero-subtitle">New Arrivals</p>
+                <h1 class="hero-title">Discover Our New Collection</h1>
+                <p class="hero-description">Elevate your living space with our thoughtfully curated designs. Experience comfort, style, and sophistication.</p>
+                <a href="#products" class="btn btn-primary">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="browse-range" class="browse-range section-padding">
+            <div class="container">
+                <h2 class="section-title">Browse The Range</h2>
+                <p class="section-subtitle">Explore our diverse categories to find the perfect pieces for your home.</p>
+                <div class="range-grid">
+                    <div class="range-item">
+                        <img src="images/range-dining.jpg" alt="Dining Room" loading="lazy">
+                        <h3>Dining</h3>
+                    </div>
+                    <div class="range-item">
+                        <img src="images/range-living.jpg" alt="Living Room" loading="lazy">
+                        <h3>Living</h3>
+                    </div>
+                    <div class="range-item">
+                        <img src="images/range-bedroom.jpg" alt="Bedroom" loading="lazy">
+                        <h3>Bedroom</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="our-products section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Products</h2>
+                <div class="product-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="images/product-1.jpg" alt="Syltherine" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn btn-secondary add-to-cart">Add to cart</button>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                                    <button class="action-btn"><i class="fas fa-compress-alt"></i> Compare</button>
+                                    <button class="action-btn"><i class="fas fa-heart"></i> Like</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Syltherine</h3>
+                            <p class="product-description">Stylish cafe chair</p>
+                            <div class="product-prices">
+                                <span class="current-price">Rp 2.500.000</span>
+                                <span class="old-price">Rp 3.500.000</span>
+                            </div>
+                        </div>
+                        <span class="badge discount-badge">-30%</span>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="images/product-2.jpg" alt="Leviosa" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn btn-secondary add-to-cart">Add to cart</button>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                                    <button class="action-btn"><i class="fas fa-compress-alt"></i> Compare</button>
+                                    <button class="action-btn"><i class="fas fa-heart"></i> Like</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Leviosa</h3>
+                            <p class="product-description">Stylish cafe chair</p>
+                            <div class="product-prices">
+                                <span class="current-price">Rp 2.500.000</span>
+                            </div>
+                        </div>
+                        <span class="badge new-badge">New</span>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="images/product-3.jpg" alt="Lolito" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn btn-secondary add-to-cart">Add to cart</button>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                                    <button class="action-btn"><i class="fas fa-compress-alt"></i> Compare</button>
+                                    <button class="action-btn"><i class="fas fa-heart"></i> Like</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Lolito</h3>
+                            <p class="product-description">Luxury modern chair</p>
+                            <div class="product-prices">
+                                <span class="current-price">Rp 7.000.000</span>
+                                <span class="old-price">Rp 14.000.000</span>
+                            </div>
+                        </div>
+                        <span class="badge discount-badge">-50%</span>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="images/product-4.jpg" alt="Respira" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn btn-secondary add-to-cart">Add to cart</button>
+                                <div class="product-actions">
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                                    <button class="action-btn"><i class="fas fa-compress-alt"></i> Compare</button>
+                                    <button class="action-btn"><i class="fas fa-heart"></i> Like</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Respira</h3>
+                            <p class="product-description">Minimalist sofa</p>
+                            <div class="product-prices">
+                                <span class="current-price">Rp 5.000.000</span>
+                            </div>
+                        </div>
+                        <span class="badge new-badge">New</span>
+                    </div>
+                </div>
+                <button class="btn btn-outline-primary show-more">Show More</button>
+            </div>
+        </section>
+
+        <section id="inspiration" class="inspiration-section section-padding">
+            <div class="container inspiration-content">
+                <div class="text-content">
+                    <h2 class="section-title">Inspiration for your home</h2>
+                    <p>Explore a world of design possibilities and find pieces that resonate with your personal style. Let us inspire your next home transformation.</p>
+                    <a href="#" class="btn btn-primary">Explore More</a>
+                </div>
+                <div class="image-gallery">
+                    <img src="images/inspiration-banner.jpg" alt="Modern interior design" loading="lazy" class="main-image">
+                    <div class="carousel-indicator">
+                        <span><i class="fas fa-chevron-left"></i></span>
+                        <span><i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips-tricks" class="tips-tricks section-padding">
+            <div class="container">
+                <h2 class="section-title">Tips & Tricks</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <img src="images/tip-1.jpg" alt="Furniture on a Budget" loading="lazy">
+                        <div class="tip-info">
+                            <h3>How to create a living room design that works</h3>
+                            <p class="tip-meta"><span><i class="fas fa-calendar-alt"></i> Oct 20, 2023</span> <span><i class="fas fa-user"></i> Admin</span></p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <img src="images/tip-2.jpg" alt="Small Space Solutions" loading="lazy">
+                        <div class="tip-info">
+                            <h3>A guide to choosing the perfect outdoor furniture</h3>
+                            <p class="tip-meta"><span><i class="fas fa-calendar-alt"></i> Oct 15, 2023</span> <span><i class="fas fa-user"></i> Admin</span></p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <img src="images/tip-3.jpg" alt="Modern Minimalist Decor" loading="lazy">
+                        <div class="tip-info">
+                            <h3>7 ways to decor your home for the holidays</h3>
+                            <p class="tip-meta"><span><i class="fas fa-calendar-alt"></i> Oct 10, 2023</span> <span><i class="fas fa-user"></i> Admin</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="share-setup" class="share-setup section-padding">
+            <div class="container text-center">
+                <h2 class="section-title">Share your setup with #FurniFashion</h2>
+                <div class="instagram-grid">
+                    <img src="https://via.placeholder.com/250x250/E8E8E8/333333?text=Image+1" alt="Setup 1" loading="lazy">
+                    <img src="https://via.placeholder.com/250x300/D8D8D8/333333?text=Image+2" alt="Setup 2" loading="lazy">
+                    <img src="https://via.placeholder.com/250x250/C8C8C8/333333?text=Image+3" alt="Setup 3" loading="lazy">
+                    <img src="https://via.placeholder.com/250x300/B8B8B8/333333?text=Image+4" alt="Setup 4" loading="lazy">
+                    <img src="https://via.placeholder.com/250x250/A8A8A8/333333?text=Image+5" alt="Setup 5" loading="lazy">
+                    <img src="https://via.placeholder.com/250x300/989898/333333?text=Image+6" alt="Setup 6" loading="lazy">
+                    <img src="https://via.placeholder.com/250x250/888888/333333?text=Image+7" alt="Setup 7" loading="lazy">
+                    <img src="https://via.placeholder.com/250x300/787878/333333?text=Image+8" alt="Setup 8" loading="lazy">
+                    <img src="https://via.placeholder.com/250x250/686868/333333?text=Image+9" alt="Setup 9" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="footer-logo">Furni.</a>
+                <p>400 University Drive Suite 200 Coral Gables,<br> FL 33134 USA</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#products">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Payment Options</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter Your Email Address">
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>2023 Furni. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

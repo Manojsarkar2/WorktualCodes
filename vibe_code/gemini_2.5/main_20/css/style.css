@@ -1,0 +1,90 @@
+/* General Body Styles */
+body {
+    font-family: var(--font-family-primary);
+    color: var(--color-text-dark);
+    background-color: var(--color-text-light);
+}
+
+/* Container for sections */
+.container {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Headings */
+h1 {
+    font-size: var(--font-size-hero-h1);
+    line-height: var(--line-height-hero-h1);
+    font-weight: 700;
+}
+h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    font-weight: 700;
+}
+h3 {
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    font-weight: 700;
+}
+h4 {
+    font-size: var(--font-size-h4);
+    line-height: var(--line-height-h4);
+    font-weight: 500;
+}
+
+/* Paragraphs */
+p {
+    font-size: var(--font-size-body-medium);
+    line-height: var(--line-height-body-medium);
+    color: var(--color-text-dark);
+}
+
+.text-small {
+    font-size: var(--font-size-body-small);
+    line-height: var(--line-height-body-small);
+}
+
+.text-large {
+    font-size: var(--font-size-body-large);
+    line-height: var(--line-height-body-large);
+}
+
+/* Utility Classes */
+.section-padding {
+    padding: var(--spacing-xxxl) 0;
+}
+
+.section-title {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.section-title.left-aligned {
+    text-align: left;
+}
+
+.flex-group {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: var(--spacing-xxl) 0;
+    }
+    .section-title {
+        margin-bottom: var(--spacing-lg);
+    }
+}

@@ -1,3 +1,7 @@
 {
-    "liveServer.settings.port": 5500
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.preferences.quoteStyle": "single",
+  "html.format.wrapLineLength": 120,
+  "css.format.wrapLineLength": 120
 }

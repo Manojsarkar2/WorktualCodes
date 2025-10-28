@@ -1,0 +1,21 @@
+{
+    "featured": [
+        { "id": 1, "title": "Jujutsu Kaisen" },
+        { "id": 2, "title": "Attack on Titan" },
+        { "id": 3, "title": "Demon Slayer" },
+        { "id": 4, "title": "My Hero Academia" },
+        { "id": 5, "title": "One Piece" }
+    ],
+    "popular": [
+        { "id": 6, "title": "Naruto Shippuden" },
+        { "id": 7, "title": "Death Note" },
+        { "id": 8, "title": "Fullmetal Alchemist: Brotherhood" },
+        { "id": 9, "title": "Hunter x Hunter" },
+        { "id": 10, "title": "Steins;Gate" }
+    ],
+    "new": [
+        { "id": 11, "title": "Chainsaw Man" },
+        { "id": 12, "title": "Spy x Family" },
+        { "id": 13, "title": "Cyberpunk: Edgerunners" }
+    ]
+}

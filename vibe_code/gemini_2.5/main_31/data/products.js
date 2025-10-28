@@ -1,0 +1,122 @@
+export const products = [
+    {
+        id: 'toy-001',
+        name: 'Sparkle Unicorn Plush',
+        description: 'A magical, soft unicorn plush toy with rainbow mane and tail.',
+        longDescription: 'Meet Sparkle, the most enchanting unicorn plush! Crafted from super-soft, hypoallergenic materials, Sparkle features a shimmering horn, glittery hooves, and a vibrant rainbow mane and tail. Perfect for cuddles, imaginative play, and adding a touch of magic to any room. Suitable for all ages, this plush friend is ready for endless adventures and comforting snuggles.',
+        price: 24.99,
+        category: 'dolls-plush',
+        ageRange: '0+ years',
+        material: 'Polyester Fiber',
+        brand: 'Dreamy Toys',
+        stock: 15
+    },
+    {
+        id: 'toy-002',
+        name: 'Mega Building Blocks Set',
+        description: 'Over 100 colorful interlocking blocks for creative construction.',
+        longDescription: 'Unleash your inner architect with the Mega Building Blocks Set! This expansive collection includes over 100 durable, brightly colored interlocking blocks in various shapes and sizes. Designed for easy gripping and stacking, it encourages fine motor skills, spatial reasoning, and imaginative construction. Comes with a sturdy storage bin for easy cleanup. Ideal for ages 3 and up.',
+        price: 39.99,
+        category: 'building-blocks',
+        ageRange: '3+ years',
+        material: 'ABS Plastic',
+        brand: 'Constructo',
+        stock: 20
+    },
+    {
+        id: 'toy-003',
+        name: 'Adventure Race Car',
+        description: 'Remote control race car with full function steering and turbo boost.',
+        longDescription: 'Get ready for high-speed thrills with the Adventure Race Car! This sleek, remote-controlled vehicle boasts full-function steering, impressive speed, and a thrilling turbo boost feature. Its durable design can handle bumps and crashes, making it perfect for indoor and outdoor racing. The easy-to-use remote ensures hours of exciting play for aspiring racers. Requires 4 AA batteries (not included). Recommended for ages 6 and up.',
+        price: 49.99,
+        category: 'vehicles',
+        ageRange: '6+ years',
+        material: 'Plastic, Metal',
+        brand: 'Speedster Toys',
+        stock: 10
+    },
+    {
+        id: 'toy-004',
+        name: 'Enchanted Forest Puzzle',
+        description: '1000-piece jigsaw puzzle depicting a vibrant fantasy forest scene.',
+        longDescription: 'Escape into a world of wonder with the Enchanted Forest Puzzle. This challenging 1000-piece jigsaw puzzle features a breathtaking illustration of a magical forest, teeming with mythical creatures and lush flora. Each piece is precisely cut from high-quality recycled cardboard, ensuring a satisfying fit. Perfect for a relaxing evening or a fun family activity. Finished size: 27 x 20 inches. Recommended for ages 12 and up.',
+        price: 19.99,
+        category: 'puzzles',
+        ageRange: '12+ years',
+        material: 'Recycled Cardboard',
+        brand: 'Mind Benders',
+        stock: 12
+    },
+    {
+        id: 'toy-005',
+        name: 'Doctor Play Kit',
+        description: 'Complete medical kit with stethoscope, syringe, and other doctor tools.',
+        longDescription: 'Inspire empathy and imaginative role-play with the Doctor Play Kit! This comprehensive set includes a realistic stethoscope, syringe (safe, non-functional), thermometer, blood pressure cuff, and other essential doctor tools, all neatly packed in a sturdy carrying case. Encourages children to explore the world of healthcare, practice caring for others, and overcome fears of doctor visits. Made from child-safe plastic. Recommended for ages 3-7.',
+        price: 29.99,
+        category: 'educational-toys',
+        ageRange: '3-7 years',
+        material: 'Plastic',
+        brand: 'Role Play Fun',
+        stock: 18
+    },
+    {
+        id: 'toy-006',
+        name: 'Superhero Action Figure',
+        description: 'Articulated action figure with removable cape and accessories.',
+        longDescription: 'Unleash your inner hero with the Galactic Guardian Action Figure! This highly articulated figure stands 12 inches tall and comes with a removable fabric cape, energy blaster, and shield accessories. With multiple points of articulation, you can pose your hero in countless action-packed stances. Perfect for recreating epic battles or inventing new adventures. Collect the entire series! Recommended for ages 4 and up.',
+        price: 15.99,
+        category: 'action-figures',
+        ageRange: '4+ years',
+        material: 'PVC Plastic',
+        brand: 'Heroic Legends',
+        stock: 25
+    },
+    {
+        id: 'toy-007',
+        name: 'Wooden Train Set',
+        description: 'Classic wooden train set with tracks, engine, and carriages.',
+        longDescription: 'All aboard for classic fun with our Wooden Train Set! This timeless toy includes a sturdy wooden engine, two carriages, and a variety of track pieces to build endless layouts. Compatible with most major wooden train brands, it encourages creative construction, fine motor skills, and imaginative storytelling. Made from sustainably sourced wood with non-toxic paints. Recommended for ages 2 and up.',
+        price: 59.99,
+        category: 'building-blocks',
+        ageRange: '2+ years',
+        material: 'Wood',
+        brand: 'EcoPlay',
+        stock: 8
+    },
+    {
+        id: 'toy-008',
+        name: 'Princess Doll Collection',
+        description: 'Set of three beautiful princess dolls with interchangeable outfits.',
+        longDescription: 'Enter a fairytale world with the Princess Doll Collection! This enchanting set features three beautifully crafted princess dolls, each with unique gowns and accessories. Their outfits are interchangeable, allowing for endless fashion play and storytelling. Perfect for inspiring imaginative narratives and developing social skills. Dolls stand 11 inches tall. Recommended for ages 3 and up.',
+        price: 34.99,
+        category: 'dolls-plush',
+        ageRange: '3+ years',
+        material: 'Plastic, Fabric',
+        brand: 'Royal Dreams',
+        stock: 14
+    },
+    {
+        id: 'toy-009',
+        name: 'Robot Coding Kit',
+        description: 'Interactive robot kit that teaches basic coding principles through play.',
+        longDescription: 'Dive into the exciting world of robotics and coding with the Robot Coding Kit! This innovative kit allows children to build their own programmable robot and learn fundamental coding concepts through fun, hands-on activities. With easy-to-follow instructions and a visual programming interface, kids can make their robot move, light up, and react to its environment. A fantastic STEM toy for future engineers and programmers. Requires 3 AAA batteries (not included). Recommended for ages 8 and up.',
+        price: 79.99,
+        category: 'educational-toys',
+        ageRange: '8+ years',
+        material: 'Plastic, Electronic Components',
+        brand: 'TechKids',
+        stock: 7
+    },
+    {
+        id: 'toy-010',
+        name: 'Giant Bubble Wand Set',
+        description: 'Create enormous, shimmering bubbles with this outdoor play set.',
+        longDescription: 'Make colossal bubbles that shimmer and float with the Giant Bubble Wand Set! This exciting outdoor toy includes an extra-large wand and a special bubble solution designed to create truly enormous bubbles. Perfect for backyard fun, parties, or just a sunny afternoon. Encourages outdoor activity and provides endless wonder. Solution is non-toxic and biodegradable. Recommended for ages 3 and up.',
+        price: 12.99,
+        category: 'outdoor-play',
+        ageRange: '3+ years',
+        material: 'Plastic, Soap Solution',
+        brand: 'Bubble Blast',
+        stock: 30
+    }
+];

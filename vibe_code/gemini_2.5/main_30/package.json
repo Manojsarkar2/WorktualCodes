@@ -1,0 +1,21 @@
+{
+  "name": "medical-spa",
+  "version": "1.0.0",
+  "description": "A modern, vanilla JavaScript medical SPA.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --port=3000 --open=index.html --config=live-server.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "spa",
+    "vanilla-js",
+    "medical",
+    "responsive"
+  ],
+  "author": "CodeGenerator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

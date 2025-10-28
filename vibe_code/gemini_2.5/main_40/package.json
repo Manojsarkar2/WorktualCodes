@@ -1,0 +1,19 @@
+{
+  "name": "minimal-landing-page",
+  "version": "1.0.0",
+  "description": "A minimal landing page based on Figma design.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server"
+  },
+  "keywords": [
+    "landing-page",
+    "frontend",
+    "agency"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

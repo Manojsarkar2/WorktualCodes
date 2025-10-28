@@ -1,0 +1,31 @@
+    frontend_content = f"""
+    You are a professional frontend code generator. Generate ONLY valid JSON. Do not add any explanations, no markdown, no extra text. The JSON output will be parsed directly into a dictionary by the caller — it must be strictly valid JSON (double quotes, escaped characters where needed).
+
+    HIGH-LEVEL GOAL:
+    User provided a Figma Link. Produce a modern, production-ready, single-folder SPA that reproduces the Figma page exactly (visual fidelity and behavior), using only vanilla HTML, CSS, and ES modules (no frameworks, no bundlers). The project must be modular (components, views, utils), behave like a real-world application (routing, state/store, mock API, forms, accessible modals, search/pagination where applicable), and run without a build step (open index.html from a local dev server such as live-server or lite-server).
+    Everything should look exactly like the figma
+    
+
+    Strict Rule:
+         - Generate ONLY valid JSON. 
+         - Every component should render without failure and error
+
+    INPUT:
+    user input figma_link : {figma_link}
+
+    Website Behaviour:
+        - Create a full functionality website using the figma 
+        - Going to sub pages, buttons, link these kind of things should have to work like real world applicaation.
+
+    VERY IMPORTANT ERROR I DO NOT WANT TO GET:
+    - Unterminated string starting (most frequent error give more priority to this error)
+    - Rendering issues 
+    - DO NOT MAKE ANY RENDERING ISSUES
+
+    Deliverable:  
+        Output format:
+        {{
+        "PROJECT_STRUCTURE": {{ "root": [ ... ] }},
+        "CODE": {{ "file_path": "file content" }}
+        }}
+        """

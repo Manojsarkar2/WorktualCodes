@@ -143,7 +143,7 @@ VERY IMPORTANT ERROR I DO NOT WANT TO GET:
         return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
 
         
-    create_project_from_json(result, base_dir="main_3")
+    create_project_from_json(result, base_dir="main_4")
 
     return {"status": "✅ Project generated successfully", "project_structure": result["PROJECT_STRUCTURE"]}
     

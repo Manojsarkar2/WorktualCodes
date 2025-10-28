@@ -1,0 +1,23 @@
+{
+  "name": "saas-dashboard-clone",
+  "version": "1.0.0",
+  "description": "A clone of the SAAS Dashboard from Figma: https://www.figma.com/design/ry6dzzBFn7ErU4GU9IVdet/SAAS-Dashboard--Community-?node-id=308-2",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=3000 --host=localhost --entry-file=index.html --no-browser"
+  },
+  "keywords": [
+    "saas",
+    "dashboard",
+    "figma",
+    "html",
+    "css",
+    "javascript",
+    "chart.js"
+  ],
+  "author": "AI Frontend Generator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

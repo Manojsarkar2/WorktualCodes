@@ -1,0 +1,14 @@
+{
+  "name": "flipshop-vanilla-spa",
+  "version": "1.0.0",
+  "description": "A Flipkart-like Single Page Application using only vanilla HTML, CSS, and JavaScript.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "author": "AI Code Generator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

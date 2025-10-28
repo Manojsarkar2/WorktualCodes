@@ -1,0 +1,14 @@
+{
+  "name": "bloom-and-petal-spa",
+  "version": "1.0.0",
+  "description": "A single-page application for a flower shop using vanilla JS.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "author": "AI Code Generator",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidStream - Real-Time Video Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Using a kit for icons as per real-world practice -->
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__left">
+            <button class="header__menu-btn" id="menu-btn">☰</button>
+            <a href="/" class="header__logo" data-link>
+                <h1>VidStream</h1>
+            </a>
+        </div>
+        <form class="header__search" id="search-form">
+            <input type="search" placeholder="Search" class="header__search-input" id="search-input">
+            <button type="submit" class="header__search-btn">🔍</button>
+        </form>
+        <div class="header__right">
+            <button class="header__icon-btn">📹</button>
+            <button class="header__icon-btn">🔔</button>
+            <img src="https://i.pravatar.cc/40" alt="User Avatar" class="header__avatar">
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar__nav">
+                <a href="/" class="sidebar__link active" data-link>🏠 Home</a>
+                <a href="/explore" class="sidebar__link" data-link>🧭 Explore</a>
+                <a href="/subscriptions" class="sidebar__link" data-link>📺 Subscriptions</a>
+                <hr class="sidebar__hr">
+                <a href="/history" class="sidebar__link" data-link>🕒 History</a>
+                <a href="/watch-later" class="sidebar__link" data-link>⏰ Watch Later</a>
+                <a href="/liked" class="sidebar__link" data-link>👍 Liked Videos</a>
+            </nav>
+        </aside>
+
+        <main id="app-root" class="content">
+            <!-- Dynamic content will be rendered here -->
+        </main>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

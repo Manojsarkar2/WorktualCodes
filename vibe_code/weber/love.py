@@ -14,7 +14,7 @@ import colorgram
 
 genai.configure(api_key="AIzaSyDxisQsGZW_T5xwMstrowF0-p7yX7H_LEQ")
 
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 app = FastAPI(title="AI Project Generator", version="1.0")
 
@@ -211,7 +211,7 @@ Deliverable:
         raise HTTPException(status_code=400, detail="Invalid JSON format")
 
     try:
-        create_project_from_json(result, base_dir="main_40")
+        create_project_from_json(result, base_dir="main_41")
         return {
             "status": "✅ Project generated successfully",
             "project_structure": result.get("PROJECT_STRUCTURE", {})
@@ -330,7 +330,7 @@ async def generate_project(request: UserRequest = Body(...)):
             return {"error": "JSON decode error", "details": str(e), "raw_output": raw_output}
 
         
-        create_project_from_json(result, base_dir="main_40")
+        create_project_from_json(result, base_dir="main_41")
 
         return {"status": "✅ Project generated successfully", "project_structure": result["PROJECT_STRUCTURE"]}
 

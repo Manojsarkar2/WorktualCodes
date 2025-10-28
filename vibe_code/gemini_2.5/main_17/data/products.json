@@ -1,0 +1,58 @@
+[
+    {
+        "id": "prod1",
+        "name": "Classic Burger",
+        "description": "Juicy beef patty, fresh lettuce, tomato, onion, pickles, and our special sauce on a toasted brioche bun.",
+        "price": 12.99,
+        "category": "Main Dishes"
+    },
+    {
+        "id": "prod2",
+        "name": "Vegan Delight Pizza",
+        "description": "Crispy crust topped with rich tomato sauce, vegan mozzarella, bell peppers, olives, mushrooms, and fresh basil.",
+        "price": 16.50,
+        "category": "Pizzas"
+    },
+    {
+        "id": "prod3",
+        "name": "Spicy Chicken Tacos",
+        "description": "Three soft corn tortillas filled with grilled spicy chicken, pico de gallo, and avocado crema.",
+        "price": 14.00,
+        "category": "Tacos"
+    },
+    {
+        "id": "prod4",
+        "name": "Mediterranean Salad",
+        "description": "Mixed greens, cucumber, tomatoes, red onion, Kalamata olives, feta cheese, and a lemon-herb vinaigrette.",
+        "price": 11.25,
+        "category": "Salads"
+    },
+    {
+        "id": "prod5",
+        "name": "Chocolate Lava Cake",
+        "description": "Warm chocolate cake with a molten fudge center, served with a scoop of vanilla bean ice cream.",
+        "price": 7.99,
+        "category": "Desserts"
+    },
+    {
+        "id": "prod6",
+        "name": "Fresh Orange Juice",
+        "description": "Freshly squeezed oranges, no added sugar.",
+        "price": 4.50,
+        "category": "Drinks"
+    },
+    {
+        "id": "prod7",
+        "name": "Gourmet Pasta Primavera",
+        "description": "Al dente pasta tossed with seasonal vegetables in a light garlic and olive oil sauce, parmesan cheese optional.",
+        "price": 15.75,
+        "category": "Main Dishes"
+    },
+    {
+        "id": "prod8",
+        "name": "Homemade Lemonade",
+        "description": "Refreshing lemonade made from real lemons and a touch of sweetness.",
+        "price": 3.99,
+        "category": "Drinks"
+    }
+]

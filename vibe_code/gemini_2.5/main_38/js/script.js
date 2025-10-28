@@ -1,0 +1,1 @@
+/* No specific JavaScript functionality was provided in the given DOM structure. */

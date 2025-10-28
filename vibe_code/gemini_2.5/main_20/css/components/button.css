@@ -1,0 +1,43 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-body-medium);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.button-primary {
+    background-color: var(--color-primary-green);
+    color: var(--color-primary-dark);
+}
+
+.button-primary:hover {
+    background-color: #A3E055; /* Lighter shade of primary green */
+    box-shadow: 0 4px 15px rgba(185, 255, 102, 0.4);
+}
+
+.button-secondary {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-text-light);
+}
+
+.button-secondary:hover {
+    background-color: var(--color-text-light);
+    color: var(--color-primary-dark);
+}
+
+.button-small {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-body-small);
+}
+
+.button-full-width {
+    width: 100%;
+}

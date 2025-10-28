@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of Clans - Official Fan Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Explore the world of Clash of Clans: strategies, troops, buildings, and community.">
+    <meta name="keywords" content="Clash of Clans, COC, strategy game, mobile game, Supercell, clans, troops, buildings">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="/" class="site-logo" data-route="home">Clash of Clans</a>
+            <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/" data-route="home">Home</a></li>
+                <li><a href="/clans" data-route="clans">Clans</a></li>
+                <li><a href="/troops" data-route="troops">Troops</a></li>
+                <li><a href="/buildings" data-route="buildings">Buildings</a></li>
+                <li><a href="/shop" data-route="shop">Shop</a></li>
+                <li><a href="/contact" data-route="contact">Contact</a></li>
+                <li class="auth-links">
+                    <a href="#" id="login-btn" aria-controls="login-modal">Login</a>
+                    <a href="#" id="signup-btn" aria-controls="signup-modal">Sign Up</a>
+                </li>
+                <li class="cart-icon-container">
+                    <a href="#" id="cart-btn" aria-label="View shopping cart" aria-haspopup="true" aria-expanded="false">
+                        <span class="cart-icon" role="img" aria-label="Shopping Cart">🛒</span>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </a>
+                    <div id="cart-dropdown" class="cart-dropdown" role="menu">
+                        <h3>Your Cart</h3>
+                        <div id="cart-items-list" class="cart-items-list"></div>
+                        <p class="cart-total">Total: <span id="cart-total-amount">0</span> Gems</p>
+                        <button id="checkout-btn" class="btn btn-primary">Checkout</button>
+                        <button id="close-cart-btn" class="btn btn-secondary">Close</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="app-content" class="app-content">
+        <!-- Content will be loaded here by JavaScript -->
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2023 Clash of Clans Fan Site. All rights reserved. Not affiliated with Supercell.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><span role="img" aria-label="Facebook icon">📘</span></a>
+                <a href="#" aria-label="Twitter"><span role="img" aria-label="Twitter icon">🐦</span></a>
+                <a href="#" aria-label="Instagram"><span role="img" aria-label="Instagram icon">📸</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+        <div class="modal-content">
+            <span class="close-button" aria-label="Close login form">&times;</span>
+            <h2 id="login-modal-title">Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username:</label>
+                    <input type="text" id="login-username" name="username" required aria-required="true">
+                    <span class="error-message" id="login-username-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required aria-required="true">
+                    <span class="error-message" id="login-password-error"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="signup-modal-title">
+        <div class="modal-content">
+            <span class="close-button" aria-label="Close signup form">&times;</span>
+            <h2 id="signup-modal-title">Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" name="username" required aria-required="true">
+                    <span class="error-message" id="signup-username-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="email" required aria-required="true">
+                    <span class="error-message" id="signup-email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="password" required aria-required="true">
+                    <span class="error-message" id="signup-password-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password:</label>
+                    <input type="password" id="signup-confirm-password" name="confirmPassword" required aria-required="true">
+                    <span class="error-message" id="signup-confirm-password-error"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
